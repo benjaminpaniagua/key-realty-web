@@ -1,0 +1,50 @@
+{
+  "Error": {
+    "description": "<p>Hemos encontrado un error.</p><p>Puedes intentar <retry>recargar la página</retry> que estabas visitando.</p>",
+    "title": "¡Algo salió mal!"
+  },
+  "IndexPage": {
+    "description": "Este es un ejemplo básico que demuestra el uso de <code>next-intl</code> con el enrutador de aplicaciones de Next.js. Intenta cambiar la configuración regional en la esquina superior derecha y ver cómo cambia el contenido.",
+    "title": "ejemplo de next-intl"
+  },
+  "LocaleLayout": {
+    "title": "ejemplo de next-intl"
+  },
+  "LocaleSwitcher": {
+    "label": "Cambiar idioma",
+    "locale": "{locale, select, de {Spanisch} en {Inglés} other {Desconocido}}"
+  },
+  "Manifest": {
+    "name": "ejemplo de next-intl"
+  },
+  "Navigation": {
+    "home": "Inicio",
+    "pathnames": "nombres-de-ruta"
+  },
+  "NotFoundPage": {
+    "description": "Por favor, verifica la barra de direcciones del navegador o utiliza la navegación para ir a una página conocida.",
+    "title": "Página no encontrada"
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "description": "Aprende mas sobre next-intl en la documentación oficial.",
+        "href": "https://next-intl.dev",
+        "title": "Documentación"
+      },
+      "source": {
+        "description": "Mira el código fuente de este ejemplo en GitHub.",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+        "title": "Código fuente"
+      }
+    }
+  },
+  "PathnamesPage": {
+    "description": "<p>Los nombres de ruta también están internacionalizados.</p><p>Si estás usando el idioma predeterminado, inglés, verás <code>/en/pathnames</code> en la barra de direcciones del navegador en esta página.</p><p>Si cambias la configuración regional a alemán, la URL se localiza en consecuencia (<code>/de/pfadnamen</code>).</p>",
+    "title": "Nombres de ruta"
+  },
+  "Layout": {
+    "title": "Portafolio - Benjamin Paniagua",
+    "description": "Desarrollado por Benjamin Paniagua"
+  }
+}
