@@ -38,7 +38,7 @@ export default async function RootLayout({
 
   return (
     <html lang={params.locale}>
-      <body className={`${inter.variable} antialiased dark`}>
+      <body className={`${inter.variable} antialiased dark bg-dark-blue`}>
         <NextIntlClientProvider messages={messages}>
           <NavBar items={DEFAULT_NAVBAR_ITEMS} />
           <main>{children}</main>

@@ -9,7 +9,7 @@ type NavBarProps = {
 
 export default function NavBar({ items, className }: NavBarProps) {
   return (
-    <div className={`flex justify-center py-8 ${className}`}>
+    <div className={`flex justify-center py-8 ${className} absolute top-0 left-0 right-0 z-50`}>
       <nav className="bg-dark-blue/70 px-8 py-4 rounded-lg backdrop-blur-lg border border-white/10">
         <ul className="flex items-center gap-12">
           {items.map((item) => (
