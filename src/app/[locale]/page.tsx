@@ -1,24 +1,24 @@
-import {Locale, useTranslations} from 'next-intl';
-import {setRequestLocale} from 'next-intl/server';
-import {use} from 'react';
+import { Locale } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { use } from "react";
+import Header from "../../components/ui/layout/Header";
+import About from "@/components/ui/layout/About";
+import Experience from "@/components/ui/layout/Experience";
+import Contact from "@/components/ui/layout/Contact";
 
-export default function IndexPage({params}: PageProps<'/[locale]'>) {
-  const {locale} = use(params);
+export default function IndexPage({ params }: PageProps<"/[locale]">) {
+  const { locale } = use(params);
 
   setRequestLocale(locale as Locale);
 
-  const t = useTranslations('IndexPage');
+  // const t = useTranslations("IndexPage");
 
   return (
-    <div className="flex flex-col gap-6">
-      <h1>{t('title')}</h1>
-      <p className="max-w-[590px]">
-        {t.rich('description', {
-          code: (chunks) => (
-            <code className="font-mono text-white">{chunks}</code>
-          )
-        })}
-      </p>
-    </div>
+    <>
+      <Header />
+      <About />
+      <Experience />
+      <Contact />
+    </>
   );
 }

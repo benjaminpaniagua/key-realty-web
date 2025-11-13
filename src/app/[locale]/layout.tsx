@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import { DEFAULT_NAVBAR_ITEMS } from "@/types/navbar";
 
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import Footer from "@/components/ui/layout/common/Footer";
+import NavBar from "@/components/ui/common/NavBar";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export async function generateMetadata({
   params,
@@ -33,9 +38,11 @@ export default async function RootLayout({
 
   return (
     <html lang={params.locale}>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}>
+      <body className={`${inter.variable} antialiased dark`}>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <NavBar items={DEFAULT_NAVBAR_ITEMS} />
+          <main>{children}</main>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

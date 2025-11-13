@@ -1,0 +1,51 @@
+"use client";
+
+import { NavBarItems } from "@/types/navbar";
+
+type NavBarProps = {
+  items: NavBarItems[];
+  className?: string;
+};
+
+export default function NavBar({ items, className }: NavBarProps) {
+  return (
+    <div className={`flex justify-center py-8 ${className}`}>
+      <nav className="bg-dark-blue/70 px-8 py-4 rounded-lg backdrop-blur-lg border border-white/10">
+        <ul className="flex items-center gap-12">
+          {items.map((item) => (
+            <li key={item.id} className="relative group text-white hover:text-white/80 cursor-pointer">
+              <button
+                type="button"
+                onClick={() => {
+                  if (item.id === 'home') {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                    return;
+                  }
+
+                  const el = document.getElementById(item.id);
+                  if (!el) return;
+
+                  // Determine offset: try to get the nav height, fall back to 80px
+                  const nav = document.querySelector('nav');
+                  const offset = nav ? (nav as HTMLElement).offsetHeight : 80;
+
+                  const top = el.getBoundingClientRect().top + window.scrollY - offset - 8; // small extra margin
+                  window.scrollTo({top, behavior: 'smooth'});
+                }}
+                className="bg-transparent text-inherit p-0"
+                aria-label={`Go to ${item.label}`}
+              >
+                {item.label}
+              </button>
+              <span
+                className="
+                  absolute left-1/2 -bottom-[6px] h-[3px] w-[3px] rounded-full bg-white opacity-0 transition-all *:duration-300 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-[3px] -translate-x-1/2
+                "
+              ></span>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  );
+}

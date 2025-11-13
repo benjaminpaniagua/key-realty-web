@@ -28,6 +28,12 @@
       ],
       "@/ui/*": [
         "./src/components/ui/*"
+      ],
+      "@/components/activity/*": [
+        "./src/components/activity/*"
+      ],
+      "@/types/*": [
+        "./src/types/*"
       ]
     }
   },
