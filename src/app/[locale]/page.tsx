@@ -4,7 +4,7 @@ import { use } from "react";
 import Header from "../../components/ui/layout/Header";
 import About from "@/components/ui/layout/About";
 import Experience from "@/components/ui/layout/Experience";
-import Contact from "@/components/ui/layout/Contact";
+import Projects from "@/components/ui/layout/Projects";
 
 export default function IndexPage({ params }: PageProps<"/[locale]">) {
   const { locale } = use(params);
@@ -17,8 +17,8 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
     <>
       <Header />
       <About />
+      <Projects />
       <Experience />
-      <Contact />
     </>
   );
 }

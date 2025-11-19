@@ -5,8 +5,8 @@ import { DEFAULT_NAVBAR_ITEMS } from "@/types/navbar";
 
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
-import Footer from "@/components/ui/layout/common/Footer";
-import NavBar from "@/components/ui/common/NavBar";
+import Footer from "@/components/activity/layout/common/Footer";
+import NavBar from "@/components/activity/layout/common/NavBar";
 
 const inter = Inter({
   subsets: ["latin"],
