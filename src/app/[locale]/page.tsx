@@ -1,10 +1,10 @@
 import { Locale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
-import Header from "../../components/ui/layout/Header";
-import About from "@/components/ui/layout/About";
-import Experience from "@/components/ui/layout/Experience";
-import Projects from "@/components/ui/layout/Projects";
+import Header from "../../components/activity/layout/Header";
+import About from "@/components/activity/layout/About";
+import Experience from "@/components/activity/layout/Experience";
+import Projects from "@/components/activity/layout/Projects";
 
 export default function IndexPage({ params }: PageProps<"/[locale]">) {
   const { locale } = use(params);
