@@ -1,10 +1,10 @@
 export default function CodeSection() {
   return (
-    <div className="flex h-full flex-col">
+    <div className="flex h-full flex-col p-6 lg:p-10">
       <p className="text-xs uppercase tracking-[0.25em] text-slate-400">
         Behind the code
       </p>
-      <p className="mt-2 text-lg font-semibold text-slate-50">
+      <p className="mt-2 text-lg font-semibold text-white">
         Transforming curiosity into code and ideas into experiences.
       </p>
 

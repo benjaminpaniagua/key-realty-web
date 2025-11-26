@@ -29,8 +29,8 @@ function renderCardContent(variant: AboutCardVariant) {
 export default function About() {
   return (
     <section id="about" className="w-full py-16 lg:py-24 bg-dark-blue">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:auto-rows-[minmax(220px,1fr)]">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+        <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:auto-rows-[minmax(180px,1fr)]">
           {ABOUT_CARDS.map((card) => (
             <article
               key={card.id}
@@ -48,7 +48,7 @@ export default function About() {
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[size:64px_64px] opacity-20" />
 
               {/* CONTENIDO REAL */}
-              <div className="relative h-full p-6 sm:p-7 lg:p-8">
+              <div className="relative h-full">
                 {renderCardContent(card.variant)}
               </div>
             </article>

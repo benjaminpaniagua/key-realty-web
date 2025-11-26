@@ -4,11 +4,11 @@ import { SOCIALS } from "@/types/about";
 
 export default function SocialMediaSection() {
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-6">
+    <div className="flex h-full flex-col items-center justify-center gap-6 p-6 lg:p-10">
       <div>
-        <h2 className="text-lg font-semibold leading-snug text-slate-50">
+        <h3 className="text-2xl font-semibold text-white">
           Check my social media!
-        </h2>
+        </h3>
       </div>
 
       <div className="flex items-center gap-10">
