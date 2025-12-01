@@ -8,10 +8,7 @@ export default function Header() {
       id="home"
       className="min-h-screen h-screen flex flex-col justify-center items-center gap-6 bg-dark-blue [background-image:linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[80px_80px] text-center"
     >
-      <p
-        className="text-gray font-normal text-xs md:text-base tracking-[2.5px]
-"
-      >
+      <p className="text-sm uppercase tracking-[0.3em] text-white/90">
         Crafting Clean, Responsive, and Scalable Frontends
       </p>
 

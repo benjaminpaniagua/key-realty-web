@@ -14,21 +14,21 @@ export default function CountrySection() {
       </div>
 
       <div className="block md:hidden mt-4 space-y-2 px-4">
-        <h2 className="text-[10px] font-medium uppercase tracking-[0.25em] text-slate-400">
+        <p className="text-xs uppercase tracking-[0.25em] text-white/70">
           Based in Costa Rica 🇨🇷
-        </h2>
-        <p className="text-lg font-semibold leading-snug text-white">
-          Turning curiosity into <br /> digital craftsmanship.
         </p>
+        <h3 className="text-2xl font-semibold text-white leading-tight">
+          Turning curiosity into <br /> digital craftsmanship.
+        </h3>
       </div>
 
       <div className="hidden md:block absolute bottom-2 xl:bottom-24 left-12 md:left-24 space-y-2">
-        <p className="text-sm font-medium uppercase tracking-[0.25em] text-white">
+        <p className="text-xs uppercase tracking-[0.25em] text-white/70">
           Based in Costa Rica 🇨🇷
         </p>
-        <p className="text-2xl font-semibold leading-snug text-white">
+        <h3 className="text-2xl font-semibold text-white leading-tight">
           Turning curiosity into <br /> digital craftsmanship.
-        </p>
+        </h3>
       </div>
     </div>
   );

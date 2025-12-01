@@ -1,25 +1,44 @@
+import Image from "next/image";
+
 export default function CodeSection() {
   return (
-    <div className="flex h-full flex-col p-6 lg:p-10">
-      <p className="text-xs uppercase tracking-[0.25em] text-slate-400">
-        Behind the code
-      </p>
-      <p className="mt-2 text-lg font-semibold text-white">
-        Transforming curiosity into code and ideas into experiences.
-      </p>
+    <section className="relative w-full h-full flex flex-col lg:flex-row items-start lg:items-center justify-between p-6 gap-8 md:gap-0">
 
-      <div className="mt-6 flex-1 rounded-2xl bg-slate-950/70 p-4 text-xs sm:text-sm font-mono text-slate-200 border border-slate-800/70">
-        <pre className="h-full w-full overflow-auto">
-          {`// React & I: a great team
+      <div className="max-w-3xl lg:max-w-xl">
+  <p className="text-sm uppercase tracking-[0.3em] text-white/90 mb-4">
+    Behind the code
+  </p>
 
-import Next from 'next';
-import React from 'react';
+  <h3 className="text-2xl md:text-3xl font-semibold text-white leading-tight md:leading-[1.2]">
+    Transforming curiosity into code and ideas into experiences.
+  </h3>
+</div>
 
-const dream = 'Turning ideas into websites';
 
-export default dream;`}
-        </pre>
+      <div className="flex justify-center lg:justify-end w-full">
+        <div
+          className="
+            relative 
+            w-full 
+            h-[250px]
+            md:w-[650px] 
+            md:h-[400px] 
+            overflow-hidden
+            rounded-2xl
+            mt-12 lg:mt-0
+            backdrop-blur-lg
+            border border-white/10
+            lg:left-12
+          "
+        >
+          <Image
+            src="/images/about/code.svg"
+            alt="Code illustration"
+            fill
+            className="object-cover object-left"   /* <-- TOMA SOLO EL LADO IZQUIERDO */
+          />
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

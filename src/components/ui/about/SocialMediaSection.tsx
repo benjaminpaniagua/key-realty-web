@@ -6,7 +6,7 @@ export default function SocialMediaSection() {
   return (
     <div className="flex h-full flex-col items-center justify-center gap-6 p-6 lg:p-10">
       <div>
-        <h3 className="text-2xl font-semibold text-white">
+        <h3 className="text-2xl font-semibold text-white leading-tight">
           Check my social media!
         </h3>
       </div>

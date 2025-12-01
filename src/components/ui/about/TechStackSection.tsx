@@ -118,7 +118,7 @@ export default function TechStackSection() {
   return (
     <section
       className={`
-        relative h-[320px] overflow-hidden rounded-3xl
+        relative h-[300px] overflow-hidden rounded-3xl
         px-6 py-6 lg:px-10 lg:py-8
         flex items-center
         transition-all duration-500
@@ -133,10 +133,10 @@ export default function TechStackSection() {
           ${sectionDim ? "opacity-40" : "opacity-100"}
         `}
       >
-        <p className="text-xs uppercase tracking-[0.25em] text-slate-400">
+        <p className="text-xs uppercase tracking-[0.25em] text-white/70">
           Always learning.
         </p>
-        <h3 className="text-2xl font-semibold text-white">
+        <h3 className="text-2xl font-semibold text-white leading-tight">
           My tech stack
         </h3>
       </div>
