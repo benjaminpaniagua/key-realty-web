@@ -45,7 +45,6 @@ const RIGHT_STACK_ITEMS = [
   "Notion",
 ];
 
-
 const createLoopItems = (items: string[]) =>
   Array.from({ length: 3 }, () => items).flat();
 

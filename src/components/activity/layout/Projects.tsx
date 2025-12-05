@@ -1,18 +1,31 @@
 "use client";
 
-import {
-  useEffect,
-  useMemo,
-  useState,
-  type TouchEvent,
-} from "react";
+import { useEffect, useMemo, useState, type TouchEvent } from "react";
 import Card from "@/components/ui/projects/Card";
 import { CARDS } from "@/data/cardsProjects";
 import type { CardItem } from "@/types/cardProjects";
 
 const AUTOPLAY_DELAY = 8000;
 const SWIPE_THRESHOLD = 50;
-const ITEMS_PER_SLIDE = 2;
+
+function useItemsPerSlide() {
+  const [items, setItems] = useState(2);
+  useEffect(() => {
+    const check = () => {
+      if (
+        window.matchMedia("(min-width: 768px) and (max-width: 1023px)").matches
+      ) {
+        setItems(1);
+      } else {
+        setItems(2);
+      }
+    };
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  return items;
+}
 
 function chunkCards(cards: CardItem[], size: number): CardItem[][] {
   const result: CardItem[][] = [];
@@ -25,9 +38,10 @@ function chunkCards(cards: CardItem[], size: number): CardItem[][] {
 }
 
 export default function Projects() {
+  const itemsPerSlide = useItemsPerSlide();
   const slides = useMemo<CardItem[][]>(
-    () => chunkCards(CARDS, ITEMS_PER_SLIDE),
-    []
+    () => chunkCards(CARDS, itemsPerSlide),
+    [itemsPerSlide]
   );
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -53,9 +67,7 @@ export default function Projects() {
   };
 
   const goToPrev = () => {
-    setCurrentSlide((prev) =>
-      prev === 0 ? totalSlides - 1 : prev - 1
-    );
+    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
   };
 
   const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
@@ -136,7 +148,11 @@ export default function Projects() {
               {slides.map((slideCards, slideIndex) => (
                 <div
                   key={slideIndex}
-                  className={`shrink-0 w-full min-w-full grid grid-cols-1 md:grid-cols-2 gap-4 transition-opacity duration-500 ${
+                  className={`shrink-0 w-full min-w-full ${
+                    slideCards.length === 1
+                      ? "flex justify-center items-center"
+                      : "grid grid-cols-1 md:grid-cols-2 gap-4"
+                  } transition-opacity duration-500 ${
                     slideIndex === currentSlide
                       ? "opacity-100"
                       : "opacity-0 md:opacity-60 pointer-events-none"
@@ -145,7 +161,13 @@ export default function Projects() {
                   {slideCards.map((card, index) => (
                     <div
                       key={card.id}
-                      className={index === 1 ? "hidden md:block" : "block"}
+                      className={
+                        slideCards.length === 1
+                          ? "w-full max-w-full"
+                          : index === 1
+                          ? "hidden md:block"
+                          : "block"
+                      }
                     >
                       <Card
                         {...card}

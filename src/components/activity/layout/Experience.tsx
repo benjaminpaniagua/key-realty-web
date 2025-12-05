@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  useEffect,
-  useMemo,
-  useState,
-  type TouchEvent,
-} from "react";
+import { useEffect, useMemo, useState, type TouchEvent } from "react";
 import Card from "@/components/ui/experience/Card";
 import { CARDS } from "@/data/cardsExperience";
 import type { CardItem } from "@/types/cardProjects";
@@ -53,9 +48,7 @@ export default function Experience() {
   };
 
   const goToPrev = () => {
-    setCurrentSlide((prev) =>
-      prev === 0 ? totalSlides - 1 : prev - 1
-    );
+    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
   };
 
   const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
@@ -111,7 +104,9 @@ export default function Experience() {
   return (
     <section id="experience" className="py-16 md:py-24">
       <div className="mx-auto max-w-[1440px]">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-white">My work{" "}<span className='text-purple'>experience</span></h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-white">
+          My work <span className="text-purple">experience</span>
+        </h2>
 
         <div className="relative mt-12 md:mt-24">
           <div className="overflow-hidden">
@@ -177,4 +172,3 @@ export default function Experience() {
     </section>
   );
 }
-

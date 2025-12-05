@@ -25,12 +25,4 @@ export const DEFAULT_NAVBAR_ITEMS: NavBarItems[] = [
     id: "experience",
     label: "Experience",
   },
-  // {
-  //     id: 'contact',
-  //     label: 'Contact',
-  // },
-  // {
-  //     id: 'lang',
-  //     label: 'Language',
-  // }
 ];

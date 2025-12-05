@@ -8,7 +8,15 @@ export const CARDS: CardItem[] = [
     image: "/images/projects/attimo.png",
     link_url: "https://portfolio.example.com",
     git_url: "https://github.com/username/portfolio",
-    technologies: ["next", "tailwind", "typescript", "php", "figma", "github", "jira"],
+    technologies: [
+      "next",
+      "tailwind",
+      "typescript",
+      "php",
+      "figma",
+      "github",
+      "jira",
+    ],
   },
   {
     id: 2,
@@ -58,7 +66,7 @@ export const CARDS: CardItem[] = [
     link_url: "https://chat.example.com",
     technologies: ["nextjs", "typescript"],
   },
-  
+
   {
     id: 8,
     title: "Integración Chat API",
@@ -67,7 +75,7 @@ export const CARDS: CardItem[] = [
     link_url: "https://chat.example.com",
     technologies: ["nextjs", "typescript"],
   },
-  
+
   {
     id: 9,
     title: "Integración Chat API",
@@ -76,7 +84,7 @@ export const CARDS: CardItem[] = [
     link_url: "https://chat.example.com",
     technologies: ["nextjs", "typescript"],
   },
-  
+
   {
     id: 10,
     title: "Integración Chat API",
@@ -85,7 +93,7 @@ export const CARDS: CardItem[] = [
     link_url: "https://chat.example.com",
     technologies: ["nextjs", "typescript"],
   },
-  
+
   {
     id: 11,
     title: "Integración Chat API",
@@ -94,7 +102,7 @@ export const CARDS: CardItem[] = [
     link_url: "https://chat.example.com",
     technologies: ["nextjs", "typescript"],
   },
-  
+
   {
     id: 12,
     title: "Integración Chat API",
@@ -103,7 +111,7 @@ export const CARDS: CardItem[] = [
     link_url: "https://chat.example.com",
     technologies: ["nextjs", "typescript"],
   },
-  
+
   {
     id: 13,
     title: "Integración Chat API",
@@ -112,7 +120,7 @@ export const CARDS: CardItem[] = [
     link_url: "https://chat.example.com",
     technologies: ["nextjs", "typescript"],
   },
-  
+
   {
     id: 14,
     title: "Integración Chat API",
@@ -121,7 +129,4 @@ export const CARDS: CardItem[] = [
     link_url: "https://chat.example.com",
     technologies: ["nextjs", "typescript"],
   },
-  
-
-  
 ];

@@ -10,7 +10,6 @@ export default function SocialMediaSection() {
           Check my social media!
         </h3>
       </div>
-
       <div className="flex items-center gap-10">
         {SOCIALS.map((social) => (
           <Link
