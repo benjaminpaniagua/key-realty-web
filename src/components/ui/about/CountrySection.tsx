@@ -18,7 +18,7 @@ export default function CountrySection() {
         <p className="text-xs uppercase tracking-[0.25em] text-white/70">
           Based in Costa Rica 🇨🇷
         </p>
-        <h3 className="text-2xl font-semibold text-white leading-tight">
+        <h3 className="text-lg md:text-2xl font-semibold text-white leading-tight">
           Turning curiosity into <br /> digital craftsmanship.
         </h3>
       </div>
@@ -27,7 +27,7 @@ export default function CountrySection() {
         <p className="text-xs uppercase tracking-[0.25em] text-white/70">
           Based in Costa Rica 🇨🇷
         </p>
-        <h3 className="text-2xl font-semibold text-white leading-tight">
+        <h3 className="text-lg md:text-2xl font-semibold text-white leading-tight">
           Turning curiosity into <br /> digital craftsmanship.
         </h3>
       </div>

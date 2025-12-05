@@ -183,7 +183,7 @@ export default function Projects() {
             </div>
           </div>
 
-          <div className="mt-8 flex items-center justify-center gap-3">
+          <div className="mt-12 flex items-center justify-center gap-3">
             {getVisibleDots().map((dotIndex) => (
               <button
                 key={dotIndex}

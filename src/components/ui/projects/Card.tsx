@@ -91,13 +91,11 @@ export default function Card({
       />
 
       {image && (
-        <div className="relative w-full mt-1 flex justify-center items-center">
+        <div className="relative w-full flex justify-center items-center">
           <div
             className="
               relative
-              w-[640px] h-[360px]
-              max-w-full
-              mx-auto
+              w-full h-0 pb-[56.25%]
               rounded-3xl
               overflow-hidden
               bg-black/5
@@ -111,14 +109,14 @@ export default function Card({
               alt={title}
               fill
               className="object-cover"
-              sizes="(min-width: 768px) 640px, 100vw"
+              sizes="100vw"
             />
           </div>
         </div>
       )}
 
       <div className="flex flex-col gap-2 mt-4">
-        <h3 className="text-lg font-semibold text-white">{title}</h3>
+         <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">{title}</h3>
         <p className="text-sm text-white/70">{description}</p>
       </div>
 

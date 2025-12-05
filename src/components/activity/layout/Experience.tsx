@@ -7,7 +7,7 @@ import type { CardItem } from "@/types/cardProjects";
 
 const AUTOPLAY_DELAY = 8000;
 const SWIPE_THRESHOLD = 50;
-const ITEMS_PER_SLIDE = 3;
+const ITEMS_PER_SLIDE = 1;
 
 function chunkCards(cards: CardItem[], size: number): CardItem[][] {
   const result: CardItem[][] = [];
@@ -108,7 +108,19 @@ export default function Experience() {
           My work <span className="text-purple">experience</span>
         </h2>
 
-        <div className="relative mt-12 md:mt-24">
+        {/* Desktop - Grid view without slider */}
+        <div className="hidden md:grid grid-cols-2 gap-4 mt-12 md:mt-24">
+          {CARDS.map((card) => (
+            <Card
+              key={card.id}
+              {...card}
+              onHoverChange={(hovering) => setIsPaused(hovering)}
+            />
+          ))}
+        </div>
+
+        {/* Mobile - Slider view */}
+        <div className="md:hidden relative mt-12">
           <div className="overflow-hidden">
             <div
               className={`flex ${
@@ -128,25 +140,17 @@ export default function Experience() {
               {slides.map((slideCards, slideIndex) => (
                 <div
                   key={slideIndex}
-                  className={`shrink-0 w-full min-w-full grid grid-cols-1 md:grid-cols-3 gap-4 transition-opacity duration-500 ${
-                    slideIndex === currentSlide
-                      ? "opacity-100"
-                      : "opacity-0 md:opacity-60 pointer-events-none"
-                  }`}
+                  className="shrink-0 w-full min-w-full"
                 >
-                  {slideCards.map((card, index) => (
-                    <div
+                  {slideCards.map((card) => (
+                    <Card
                       key={card.id}
-                      className={index === 1 ? "hidden md:block" : "block"}
-                    >
-                      <Card
-                        {...card}
-                        parallaxOffset={
-                          slideIndex === currentSlide ? parallaxOffset : 0
-                        }
-                        onHoverChange={(hovering) => setIsPaused(hovering)}
-                      />
-                    </div>
+                      {...card}
+                      parallaxOffset={
+                        slideIndex === currentSlide ? parallaxOffset : 0
+                      }
+                      onHoverChange={(hovering) => setIsPaused(hovering)}
+                    />
                   ))}
                 </div>
               ))}

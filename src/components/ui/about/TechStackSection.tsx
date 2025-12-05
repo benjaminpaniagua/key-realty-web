@@ -135,7 +135,7 @@ export default function TechStackSection() {
         <p className="text-xs uppercase tracking-[0.25em] text-white/70">
           Always learning.
         </p>
-        <h3 className="text-2xl font-semibold text-white leading-tight">
+        <h3 className="text-lg md:text-2xl font-semibold text-white leading-tight">
           My tech stack
         </h3>
       </div>

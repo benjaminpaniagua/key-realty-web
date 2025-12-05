@@ -15,10 +15,10 @@ export default function EmailSection() {
   return (
     <div className="flex h-full flex-col justify-center p-6 lg:p-10 gap-4">
       <div className="flex flex-col gap-2">
-        <h3 className="text-2xl font-semibold text-white leading-tight">
+        <h3 className="text-lg md:text-2xl font-semibold text-white leading-tight">
           Do you want contact me?
         </h3>
-        <p className="text-xs uppercase tracking-[0.25em] text-white/90 mb-3">
+        <p className="text-xs uppercase tracking-[0.25em] text-white/90">
           Im open to collaborations and new challenges.
         </p>
       </div>
