@@ -8,9 +8,6 @@ import type { TechnologyId } from "@/types/technology";
 type CardProps = {
   title: string;
   description: string;
-  image?: string;
-  link_url?: string;
-  git_url?: string;
   technologies: TechnologyId[];
   parallaxOffset?: number;
   onHoverChange?: (hovering: boolean) => void;
@@ -48,9 +45,6 @@ function useMaxVisibleTechnologies() {
 export default function Card({
   title,
   description,
-  image,
-  link_url,
-  git_url,
   technologies,
   parallaxOffset = 0,
   onHoverChange,
@@ -89,33 +83,6 @@ export default function Card({
           group-hover:opacity-100
         "
       />
-
-      {image && (
-        <div className="relative w-full mt-1 flex justify-center items-center">
-          <div
-            className="
-              relative
-              w-[640px] h-[360px]
-              max-w-full
-              mx-auto
-              rounded-3xl
-              overflow-hidden
-              bg-black/5
-              transform translate-y-3
-              transition-all duration-700 ease-[cubic-bezier(.22,.61,.36,1)]
-              group-hover:translate-y-0
-            "
-          >
-            <Image
-              src={image.startsWith("/") ? image : `/${image}`}
-              alt={title}
-              fill
-              className="object-cover"
-              sizes="(min-width: 768px) 640px, 100vw"
-            />
-          </div>
-        </div>
-      )}
 
       <div className="flex flex-col gap-2 mt-4">
         <h3 className="text-lg font-semibold text-white">{title}</h3>
@@ -208,50 +175,6 @@ export default function Card({
             </div>
           )}
         </div>
-
-        {link_url && (
-          <a
-            href={link_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              text-sm text-purple whitespace-nowrap flex items-center gap-2 font-medium
-              transition-transform duration-300
-              group-hover:-translate-x-1 hover:underline
-            "
-          >
-            Visit website{" "}
-            <Image
-              src="/images/icons/arrowPurple.svg"
-              alt="Arrow"
-              width={8}
-              height={8}
-              className="object-contain"
-            />
-          </a>
-        )}
-
-        {git_url && (
-          <a
-            href={git_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              text-sm text-purple whitespace-nowrap flex items-center gap-2 font-medium
-              transition-transform duration-300
-              group-hover:-translate-x-1 hover:underline
-            "
-          >
-            View Code{" "}
-            <Image
-              src="/images/icons/arrowPurple.svg"
-              alt="Arrow"
-              width={8}
-              height={8}
-              className="object-contain"
-            />
-          </a>
-        )}
       </div>
     </div>
   );

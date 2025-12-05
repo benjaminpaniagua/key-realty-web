@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "../../ui/common/Button";
+import Button from "@/components/ui/common/Button";
 
 export default function Header() {
   return (

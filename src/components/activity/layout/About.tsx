@@ -5,7 +5,6 @@ import PassionSection from "@/components/ui/about/PassionSection";
 import SocialMediaSection from "@/components/ui/about/SocialMediaSection";
 import TechStackSection from "@/components/ui/about/TechStackSection";
 import { ABOUT_CARDS, AboutCardVariant } from "@/types/about";
-import React from "react";
 
 function renderCardContent(variant: AboutCardVariant) {
   switch (variant) {
@@ -29,7 +28,7 @@ function renderCardContent(variant: AboutCardVariant) {
 export default function About() {
   return (
     <section id="about" className="w-full py-16 lg:py-24 bg-dark-blue">
-      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1440px]">
         <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:auto-rows-auto">
           {ABOUT_CARDS.map((card) => (
             <article

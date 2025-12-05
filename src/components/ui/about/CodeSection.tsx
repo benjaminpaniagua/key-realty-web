@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function CodeSection() {
   return (
-    <section className="relative w-full h-full flex flex-col lg:flex-row items-start lg:items-center justify-between p-6 gap-8 md:gap-0">
+    <section className="relative w-full h-full flex flex-col lg:flex-row items-start lg:items-center justify-between p-6">
 
       <div className="max-w-3xl lg:max-w-xl">
   <p className="text-sm uppercase tracking-[0.3em] text-white/90 mb-4">
