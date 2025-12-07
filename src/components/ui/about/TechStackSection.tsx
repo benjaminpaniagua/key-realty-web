@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 type StackColumnProps = {
@@ -111,6 +112,7 @@ function StackColumn({
 
 export default function TechStackSection() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const t = useTranslations("About.TechStackSection");
 
   const sectionDim = hoveredCard !== null;
 
@@ -133,10 +135,10 @@ export default function TechStackSection() {
         `}
       >
         <p className="text-xs uppercase tracking-[0.25em] text-white/70">
-          Always learning.
+          {t("subtitle1")}
         </p>
         <h3 className="text-lg md:text-2xl font-semibold text-white leading-tight">
-          My tech stack
+          {t("title")}
         </h3>
       </div>
 

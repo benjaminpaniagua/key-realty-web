@@ -53,5 +53,34 @@
     "occupation": "Frontend Developer",
     "subtitle1": "Modern, Accessible & Scalable Web Solutions",
     "subtitle2": "Passionate about building fast, user-friendly digital experiences. Open to new frontend opportunities."
+  },
+
+  "About": {
+    "CountrySection": {
+      "title": "Turning curiosity into <br /> digital craftsmanship.",
+      "subtitle1": "Based in Costa Rica 🇨🇷"
+    },
+    "SocialMediaSection": {
+      "title": "Check my social media!"
+    },
+    "TechStackSection": {
+      "title": "My tech stack",
+      "subtitle1": "Always learning."
+    },
+    "PassionSection": {
+      "title": "Developer with a strong passion for building modern, scalable applications."
+    },
+    "EmailSection": {
+      "title": "Do you want contact me?",
+      "subtitle1": "I am open to collaborating.",
+      "button": {
+        "emailCopied": "✓ Email copied!",
+        "copy": "Copy my email address"
+      }
+    },
+    "CodeSection": {
+      "title": "Transforming curiosity into code and ideas into experiences.",
+      "subtitle1": "Behind the code"
+    }
   }
 }

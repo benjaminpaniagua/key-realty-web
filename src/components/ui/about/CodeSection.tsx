@@ -1,15 +1,17 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function CodeSection() {
+  const t = useTranslations("About.CodeSection");
   return (
     <section className="relative w-full h-full flex flex-col lg:flex-row items-start lg:items-center justify-between p-6">
       <div className="max-w-3xl lg:max-w-xl flex flex-col gap-2">
         <p className="text-sm uppercase tracking-[0.3em] text-white/90">
-          Behind the code
+          {t("subtitle1")}
         </p>
 
         <h3 className="text-lg md:text-2xl font-semibold text-white leading-tight md:leading-[1.2]">
-          Transforming curiosity into code and ideas into experiences.
+          {t("title")}
         </h3>
       </div>
 

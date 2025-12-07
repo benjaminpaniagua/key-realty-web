@@ -52,5 +52,34 @@
     "occupation": "Desarrollador Frontend",
     "subtitle1": "Soluciones web modernas, accesibles y escalables",
     "subtitle2": "Apasionado por construir experiencias digitales rápidas y fáciles de usar. Abierto a nuevas oportunidades en frontend."
+  },
+
+  "About": {
+    "CountrySection": {
+      "title": "Transformando la curiosidad en <br /> artesanía digital.",
+      "subtitle1": "Basado en Costa Rica 🇨🇷"
+    },
+    "SocialMediaSection": {
+      "title": "¡Revisa mis redes sociales!"
+    },
+    "TechStackSection": {
+      "title": "Mi stack tecnológico",
+      "subtitle1": "Siempre aprendiendo."
+    },
+    "PassionSection": {
+      "title": "Desarrollador con una fuerte pasión por construir aplicaciones modernas y escalables."
+    },
+    "EmailSection": {
+      "title": "¿Quieres contactarme?",
+      "subtitle1": "Estoy abierto a colaborar.",
+      "button": {
+        "emailCopied": "✓ ¡Email copiado!",
+        "copy": "Copiar mi correo electrónico"
+      }
+    },
+    "CodeSection": {
+      "title": "Transformando la curiosidad en código e ideas en experiencias.",
+      "subtitle1": "Detrás del código"
+    }
   }
 }

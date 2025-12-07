@@ -1,13 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SOCIALS } from "@/types/about";
+import { useTranslations } from "next-intl";
 
 export default function SocialMediaSection() {
+  const t = useTranslations("About.SocialMediaSection");
   return (
     <div className="flex h-full flex-col items-center justify-center gap-6 p-6 lg:p-10">
       <div>
         <h3 className="text-lg md:text-2xl font-semibold text-white leading-tight">
-          Check my social media!
+          {t("title")}
         </h3>
       </div>
       <div className="flex items-center gap-10">
