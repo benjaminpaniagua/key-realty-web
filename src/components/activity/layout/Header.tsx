@@ -1,6 +1,12 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 export default function Header() {
+
+    const t = useTranslations("Header");
+
+
   return (
     <header
       id="home"
@@ -8,16 +14,16 @@ export default function Header() {
     >
 
       <p className="text-sm md:text-lg uppercase tracking-[0.3em] text-white/90">
-        Modern, Accessible & Scalable Web Solutions
+        {t("subtitle1")}
       </p>
 
       <h1 className="text-white font-bold text-5xl md:text-7xl leading-tight max-w-5xl">
-        Benjamin Paniagua <br />
-        <span className="text-purple">Frontend Developer</span>
+        {t("name")} <br />
+        <span className="text-purple">{t("occupation")}</span>
       </h1>
 
       <p className="text-base md:text-xl font-normal text-white/90 max-w-2xl">
-        Passionate about building fast, user-friendly digital experiences. Open to new frontend opportunities.
+        {t("subtitle2")}
       </p>
     </header>
   );

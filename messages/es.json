@@ -46,5 +46,11 @@
   "Layout": {
     "title": "Portafolio - Benjamin Paniagua",
     "description": "Desarrollado por Benjamin Paniagua"
+  },
+  "Header": {
+    "name": "Benjamin Paniagua",
+    "occupation": "Desarrollador Frontend",
+    "subtitle1": "Soluciones web modernas, accesibles y escalables",
+    "subtitle2": "Apasionado por construir experiencias digitales rápidas y fáciles de usar. Abierto a nuevas oportunidades en frontend."
   }
 }

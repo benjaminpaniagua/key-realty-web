@@ -16,9 +16,10 @@ const inter = Inter({
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const t = await getTranslations({ locale: params.locale, namespace: "Layout" });
+  const { locale } = await params;
+  const t = await getTranslations({ locale: locale, namespace: "Layout" });
   return {
     title: t("title"),
     description: t("description"),
@@ -30,14 +31,15 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  setRequestLocale(params.locale);
+  const { locale } = await params;
+  setRequestLocale(locale);
 
   const messages = await getMessages();
 
   return (
-    <html lang={params.locale}>
+    <html lang={locale}>
       <body className={`${inter.variable} antialiased dark bg-dark-blue`}>
         <NextIntlClientProvider messages={messages}>
           <NavBar items={DEFAULT_NAVBAR_ITEMS} />
