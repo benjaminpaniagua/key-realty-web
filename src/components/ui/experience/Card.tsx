@@ -23,10 +23,9 @@ export default function Card({
         group relative
         border border-white/10
         rounded-2xl px-4 py-8
-        flex items-start justify-between gap-3 
+        flex items-center justify-between gap-4
         will-change-transform
         transition-all duration-500 ease-[cubic-bezier(.22,.61,.36,1)]
-        hover:shadow-[0_15px_50px_rgba(15,23,42,0.7)]
       "
       style={{ transform: `translateX(${parallaxOffset}px)` }}
       onMouseEnter={() => onHoverChange?.(true)}
@@ -48,9 +47,9 @@ export default function Card({
           <Image
             src={image}
             alt={title}
-            width={100}
-            height={100}
-            className="object-contain"
+            width={48}
+            height={48}
+            className="object-contain w-12 h-12 md:w-20 md:h-20"
           />
         </div>
       )}

@@ -73,7 +73,6 @@ export default function Card({
         flex flex-col justify-between gap-4 h-full
         will-change-transform
         transition-all duration-500 ease-[cubic-bezier(.22,.61,.36,1)]
-        hover:shadow-[0_15px_50px_rgba(15,23,42,0.7)]
       "
       style={{ transform: `translateX(${parallaxOffset}px)` }}
       onMouseEnter={() => onHoverChange?.(true)}
@@ -108,7 +107,12 @@ export default function Card({
               src={image.startsWith("/") ? image : `/${image}`}
               alt={title}
               fill
-              className="object-cover"
+              className="
+                object-cover
+                transform-gpu
+                transition-transform duration-700 ease-[cubic-bezier(.22,.61,.36,1)]
+                group-hover:scale-105
+              "
               sizes="100vw"
             />
           </div>
