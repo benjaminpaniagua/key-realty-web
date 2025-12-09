@@ -23,7 +23,9 @@
   },
   "NotFoundPage": {
     "description": "Por favor, verifica la barra de direcciones del navegador o utiliza la navegación para ir a una página conocida.",
-    "title": "Página no encontrada"
+    "title": "Página no encontrada",
+    "backToHome": "← Volver al inicio",
+    "viewMyWork": "Ver mis trabajos →"
   },
   "PageLayout": {
     "links": {
@@ -51,7 +53,9 @@
     "name": "Benjamin Paniagua",
     "occupation": "Desarrollador Frontend",
     "subtitle1": "Soluciones web modernas, accesibles y escalables",
-    "subtitle2": "Apasionado por construir experiencias digitales rápidas y fáciles de usar. Abierto a nuevas oportunidades en frontend."
+    "subtitle2": "Apasionado por construir experiencias digitales rápidas y fáciles de usar. Abierto a nuevas oportunidades en frontend.",
+    "btnCV": "Descargar CV",
+    "pdfUrl": "/cv/BenjaminPaniaguaES.pdf"
   },
 
   "About": {
@@ -79,7 +83,9 @@
     },
     "CodeSection": {
       "title": "Transformando la curiosidad en código e ideas en experiencias.",
-      "subtitle1": "Detrás del código"
+      "subtitle1": "Detrás del código",
+      "imageSrc": "/images/about/codeES.svg",
+      "imageAlt": "Ilustración de código"
     }
   }
 }

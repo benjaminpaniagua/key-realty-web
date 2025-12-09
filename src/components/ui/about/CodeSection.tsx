@@ -32,8 +32,8 @@ export default function CodeSection() {
           "
         >
           <Image
-            src="/images/about/code.svg"
-            alt="Code illustration"
+            src={t("imageSrc")}
+            alt={t("imageAlt")}
             fill
             className="object-cover object-left"
           />

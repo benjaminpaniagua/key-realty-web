@@ -148,14 +148,14 @@ export default function Projects() {
               {slides.map((slideCards, slideIndex) => (
                 <div
                   key={slideIndex}
-                  className={`shrink-0 w-full min-w-full ${
+                  className={`shrink-0 w-full min-w-full py-2 px-[.15rem] ${
                     slideCards.length === 1
                       ? "flex justify-center items-center"
                       : "grid grid-cols-1 md:grid-cols-2 gap-4"
                   } transition-opacity duration-500 ${
                     slideIndex === currentSlide
                       ? "opacity-100"
-                      : "opacity-0 md:opacity-60 pointer-events-none"
+                      : "opacity-0 md:opacity-0 pointer-events-none"
                   }`}
                 >
                   {slideCards.map((card, index) => (

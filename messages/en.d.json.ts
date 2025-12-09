@@ -26,7 +26,9 @@ declare const messages: {
   },
   "NotFoundPage": {
     "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
-    "title": "Page not found"
+    "title": "Page not found",
+    "backToHome": "← Back to Home",
+    "viewMyWork": "View My Works →"
   },
   "PageLayout": {
     "links": {
@@ -55,7 +57,9 @@ declare const messages: {
     "name": "Benjamin Paniagua",
     "occupation": "Frontend Developer",
     "subtitle1": "Modern, Accessible & Scalable Web Solutions",
-    "subtitle2": "Passionate about building fast, user-friendly digital experiences. Open to new frontend opportunities."
+    "subtitle2": "Passionate about building fast, user-friendly digital experiences. Open to new frontend opportunities.",
+    "btnCV": "Download CV",
+    "pdfUrl": "/cv/BenjaminPaniaguaEN.pdf"
   },
 
   "About": {
@@ -83,7 +87,9 @@ declare const messages: {
     },
     "CodeSection": {
       "title": "Transforming curiosity into code and ideas into experiences.",
-      "subtitle1": "Behind the code"
+      "subtitle1": "Behind the code",
+      "imageSrc": "/images/about/codeEN.svg",
+      "imageAlt": "Code illustration"
     }
   }
 };

@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Button from '../../ui/common/Button';
 
 export default function Header() {
 
@@ -25,6 +26,7 @@ export default function Header() {
       <p className="text-base md:text-xl font-normal text-white/90 max-w-2xl">
         {t("subtitle2")}
       </p>
+      <Button text={t("btnCV")} icon="/images/icons/download.svg" iconAlt="Download icon" pdfUrl={t("pdfUrl")} />
     </header>
   );
 }
