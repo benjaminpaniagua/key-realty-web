@@ -32,7 +32,7 @@ export const CARDS: CardItem[] = [
     description: "Sistema de mensajería en tiempo real.",
     image: "/images/projects/sultanFlavors.png",
     link_url: "https://chat.example.com",
-    technologies: ["nextjs", "typescript"],
+    technologies: ["typescript"],
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ export const CARDS: CardItem[] = [
     description: "Sistema de mensajería en tiempo real.",
     image: "/projects/chat.png",
     link_url: "https://chat.example.com",
-    technologies: ["nextjs", "typescript"],
+    technologies: ["typescript"],
   },
   {
     id: 5,
@@ -48,7 +48,7 @@ export const CARDS: CardItem[] = [
     description: "Sistema de mensajería en tiempo real.",
     image: "/projects/chat.png",
     link_url: "https://chat.example.com",
-    technologies: ["nextjs", "typescript"],
+    technologies: ["typescript"],
   },
   {
     id: 6,
@@ -56,7 +56,7 @@ export const CARDS: CardItem[] = [
     description: "Sistema de mensajería en tiempo real.",
     image: "/projects/chat.png",
     link_url: "https://chat.example.com",
-    technologies: ["nextjs", "typescript"],
+    technologies: ["typescript"],
   },
   {
     id: 7,
@@ -64,7 +64,7 @@ export const CARDS: CardItem[] = [
     description: "Sistema de mensajería en tiempo real.",
     image: "/projects/chat.png",
     link_url: "https://chat.example.com",
-    technologies: ["nextjs", "typescript"],
+    technologies: ["typescript"],
   },
 
   {
@@ -73,7 +73,7 @@ export const CARDS: CardItem[] = [
     description: "Sistema de mensajería en tiempo real.",
     image: "/projects/chat.png",
     link_url: "https://chat.example.com",
-    technologies: ["nextjs", "typescript"],
+    technologies: ["typescript"],
   },
 
   {
@@ -82,7 +82,7 @@ export const CARDS: CardItem[] = [
     description: "Sistema de mensajería en tiempo real.",
     image: "/projects/chat.png",
     link_url: "https://chat.example.com",
-    technologies: ["nextjs", "typescript"],
+    technologies: ["typescript"],
   },
 
   {
@@ -91,7 +91,7 @@ export const CARDS: CardItem[] = [
     description: "Sistema de mensajería en tiempo real.",
     image: "/projects/chat.png",
     link_url: "https://chat.example.com",
-    technologies: ["nextjs", "typescript"],
+    technologies: ["typescript"],
   },
 
   {
@@ -100,7 +100,7 @@ export const CARDS: CardItem[] = [
     description: "Sistema de mensajería en tiempo real.",
     image: "/projects/chat.png",
     link_url: "https://chat.example.com",
-    technologies: ["nextjs", "typescript"],
+    technologies: ["typescript"],
   },
 
   {
@@ -109,7 +109,7 @@ export const CARDS: CardItem[] = [
     description: "Sistema de mensajería en tiempo real.",
     image: "/projects/chat.png",
     link_url: "https://chat.example.com",
-    technologies: ["nextjs", "typescript"],
+    technologies: ["typescript"],
   },
 
   {
@@ -118,7 +118,7 @@ export const CARDS: CardItem[] = [
     description: "Sistema de mensajería en tiempo real.",
     image: "/projects/chat.png",
     link_url: "https://chat.example.com",
-    technologies: ["nextjs", "typescript"],
+    technologies: ["typescript"],
   },
 
   {
@@ -127,6 +127,6 @@ export const CARDS: CardItem[] = [
     description: "Sistema de mensajería en tiempo real.",
     image: "/projects/chat.png",
     link_url: "https://chat.example.com",
-    technologies: ["nextjs", "typescript"],
+    technologies: ["typescript"],
   },
 ];

@@ -87,5 +87,10 @@
       "imageSrc": "/images/about/codeES.svg",
       "imageAlt": "Ilustración de código"
     }
+  },
+  "LanguageSwitcher": {
+    "label": "Cambiar idioma",
+    "english": "Inglés",
+    "spanish": "Español"
   }
 }

@@ -91,6 +91,11 @@ declare const messages: {
       "imageSrc": "/images/about/codeEN.svg",
       "imageAlt": "Code illustration"
     }
+  },
+  "LanguageSwitcher": {
+    "label": "Change language",
+    "english": "English",
+    "spanish": "Spanish"
   }
 };
 export default messages;

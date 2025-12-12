@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import Footer from "@/components/activity/layout/common/Footer";
 import NavBar from "@/components/activity/layout/common/NavBar";
+import "flag-icons/css/flag-icons.min.css";
 import "./globals.css";
 
 const inter = Inter({
