@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 type ButtonProps = {
@@ -13,21 +15,51 @@ export default function Button({
   iconAlt,
   pdfUrl
 }: ButtonProps) {
-  const openPdf = () => {
-    if (pdfUrl) {
-      window.open(pdfUrl, "_blank");
-    } else {
+  const openPdf = async () => {
+    if (!pdfUrl) {
       console.error("No se proporcionó una URL válida para el PDF.");
+      return;
+    }
+
+    window.open(pdfUrl, "_blank", "noopener,noreferrer");
+
+    const fileName = pdfUrl.split("/").pop() || "documento.pdf";
+    const triggerDownload = (url: string) => {
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = fileName;
+      link.rel = "noreferrer";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
+
+    try {
+      const response = await fetch(pdfUrl);
+      if (!response.ok) throw new Error("No se pudo descargar el PDF.");
+      const blob = await response.blob();
+      const blobUrl = URL.createObjectURL(blob);
+      triggerDownload(blobUrl);
+      URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.error("Error al descargar el PDF:", error);
+      triggerDownload(pdfUrl);
     }
   };
 
   return (
     <button
       onClick={openPdf}
-      className="group px-8 py-4 rounded-2xl bg-linear-to-r from-light-blue to-blue border-2 border-light-blue text-white text-base md:text-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-light-blue hover:border-dark-blue w-full sm:w-fit mx-auto"
-      title="ssss"
+      className="
+        group relative overflow-hidden cursor-pointer
+        px-8 py-4 rounded-2xl text-white text-base md:text-lg font-semibold
+        flex items-center justify-center gap-3 w-full sm:w-fit mx-auto]
+        hover:shadow-[0_40px_100px_rgba(203,172,249,0.28)]
+        border-2 border-purple/25 bg-dark-blue hover:bg-dark-blue/80
+        transition-all duration-300
+      "
     >
-      <span className="transition-transform group-hover:-translate-x-1">
+      <span className="transition-transform">
         {text}</span>
       {icon && (
         <Image
@@ -35,7 +67,7 @@ export default function Button({
           alt={iconAlt}
           width={24}
           height={24}
-          className="w-6 h-6 transition-transform group-hover:translate-x-1"
+          className="w-6 h-6 transition-transform"
         />
       )}
     </button>

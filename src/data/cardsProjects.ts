@@ -7,7 +7,7 @@ export const CARDS: CardItem[] = [
     description: "Un portfolio rápido, accesible y minimalista.",
     image: "/images/projects/attimo.png",
     link_url: "https://portfolio.example.com",
-    git_url: "https://github.com/username/portfolio",
+    //git_url: "https://github.com/username/portfolio",
     technologies: [
       "next",
       "tailwind",

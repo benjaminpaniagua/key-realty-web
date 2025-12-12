@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const EMAIL = "benjamin.paniaguar12@gmail.com";
 
@@ -13,6 +13,16 @@ export default function EmailSection() {
     navigator.clipboard.writeText(EMAIL);
     setCopied(true);
   };
+
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
+    if (copied) {
+      timeout = setTimeout(() => {
+        setCopied(false);
+      }, 4000);
+    }
+    return () => clearTimeout(timeout);
+  }, [copied]);
 
   return (
     <div className="flex h-full flex-col justify-center p-6 lg:p-10 gap-4">
@@ -29,7 +39,7 @@ export default function EmailSection() {
         onClick={handleCopy}
         className={`w-full rounded-xl px-8 py-4 text-sm
           text-white transition font-medium flex items-center justify-center gap-2
-          ${copied ? "bg-green-700/90" : "bg-dark-blue hover:bg-dark-blue/70 text-white"}
+          ${copied ? "bg-green-700/90 cursor-not-allowed" : "bg-dark-blue hover:bg-dark-blue/70 text-white cursor-pointer"}
         `}
       >
         {!copied && (

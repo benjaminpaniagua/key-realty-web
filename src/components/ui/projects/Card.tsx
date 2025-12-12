@@ -17,15 +17,8 @@ type CardProps = {
 };
 
 function useMaxVisibleTechnologies() {
-  const [maxVisible, setMaxVisible] = useState(() => {
-    if (typeof window === "undefined") return 3;
-
-    const w = window.innerWidth;
-    if (w < 768) return 2;
-    if (w < 1024) return 2;
-    if (w < 1280) return 3;
-    return 5;
-  });
+  // Start with a stable server/client value to avoid hydration mismatch, then adjust on mount.
+  const [maxVisible, setMaxVisible] = useState(3);
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,6 +31,7 @@ function useMaxVisibleTechnologies() {
       setMaxVisible((prev) => (prev === next ? prev : next));
     };
 
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);

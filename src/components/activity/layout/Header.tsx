@@ -11,14 +11,14 @@ export default function Header() {
   return (
     <header
       id="home"
-      className="min-h-screen h-screen flex flex-col justify-center items-center gap-6 bg-dark-blue [background-image:linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[80px_80px] text-center"
+      className="min-h-screen h-screen flex flex-col justify-center items-center gap-4 bg-dark-blue [background-image:linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[80px_80px] text-center mt-12"
     >
 
       <p className="text-sm md:text-lg uppercase tracking-[0.3em] text-white/90">
         {t("subtitle1")}
       </p>
 
-      <h1 className="text-white font-bold text-5xl md:text-7xl leading-tight max-w-5xl">
+      <h1 className="text-white font-bold text-4xl md:text-6xl leading-tight max-w-5xl">
         {t("name")} <br />
         <span className="text-purple">{t("occupation")}</span>
       </h1>

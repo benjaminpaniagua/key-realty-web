@@ -14,7 +14,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
   // const t = useTranslations("IndexPage");
 
   return (
-    <main className="px-4 sm:px-6 lg:px-8">
+    <main className="px-4 sm:px-6 lg:px-8 font-inter">
       <Header />
       <About />
       <Projects />
