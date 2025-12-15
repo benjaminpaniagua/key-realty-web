@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState, type TouchEvent } from "react";
+import { useTranslations } from "next-intl";
 import Card from "@/components/ui/experience/Card";
-import { CARDS } from "@/data/cardsExperience";
 import type { CardItem } from "@/types/cardProjects";
 
 const AUTOPLAY_DELAY = 8000;
@@ -20,9 +20,19 @@ function chunkCards(cards: CardItem[], size: number): CardItem[][] {
 }
 
 export default function Experience() {
+  const t = useTranslations("Experience");
+
+  const cards: CardItem[] = useMemo(
+    () =>
+      t.raw("cards").map(
+        (card: { id: number; title: string; description: string; dates: string; image: string }) => card
+      ),
+    [t]
+  );
+
   const slides = useMemo<CardItem[][]>(
-    () => chunkCards(CARDS, ITEMS_PER_SLIDE),
-    []
+    () => chunkCards(cards, ITEMS_PER_SLIDE),
+    [cards]
   );
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -110,7 +120,7 @@ export default function Experience() {
 
         {/* Desktop - Grid view without slider */}
         <div className="hidden md:grid grid-cols-2 gap-4 mt-12 md:mt-24">
-          {CARDS.map((card) => (
+          {cards.map((card) => (
             <Card
               key={card.id}
               {...card}

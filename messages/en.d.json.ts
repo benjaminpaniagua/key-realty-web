@@ -92,6 +92,31 @@ declare const messages: {
       "imageAlt": "Code illustration"
     }
   },
+  "Experience": {
+    "cards": [
+      {
+        "id": 1,
+        "title": "Fortunara",
+        "description": "Development and maintenance of web modules with React, Next.js and TypeScript, applying responsive design, performance optimization and integration of dynamic sections and interactive components.",
+        "dates": "Jun 2025 - Dec 2025",
+        "image": "/images/experience/frame2.svg"
+      },
+      {
+        "id": 2,
+        "title": "ITM Coordination",
+        "description": "Support and maintenance of academic web systems and digital materials. Technology inventory management and support in documentation and testing of internal applications.",
+        "dates": "Jun 2024 - Jun 2025",
+        "image": "/images/experience/developer.svg"
+      },
+      {
+        "id": 3,
+        "title": "Sports Unit",
+        "description": "Management of institutional web content, support for sports and recreational activities, and collaboration in review of reports, plans and sports scholarship requests.",
+        "dates": "Jan 2024 - Dec 2025",
+        "image": "/images/experience/flash.svg"
+      }
+    ]
+  },
   "LanguageSwitcher": {
     "label": "Change language",
     "english": "English",

@@ -88,6 +88,31 @@
       "imageAlt": "Ilustración de código"
     }
   },
+  "Experience": {
+    "cards": [
+      {
+        "id": 1,
+        "title": "Fortunara",
+        "description": "Desarrollo y mantenimiento de módulos web con React, Next.js y TypeScript, aplicando diseño responsive, optimización de rendimiento e integración de secciones dinámicas y componentes interactivos.",
+        "dates": "Jun 2025 - Dic 2025",
+        "image": "/images/experience/frame2.svg"
+      },
+      {
+        "id": 2,
+        "title": "Coordinación de ITM",
+        "description": "Soporte y mantenimiento de sistemas web académicos y materiales digitales. Gestión de inventario tecnológico y apoyo en documentación y pruebas de aplicaciones internas.",
+        "dates": "Jun 2024 - Jun 2025",
+        "image": "/images/experience/developer.svg"
+      },
+      {
+        "id": 3,
+        "title": "Unidad de deportes",
+        "description": "Gestión de contenido web institucional, apoyo a actividades deportivas y recreativas, y colaboración en revisión de reportes, planes y solicitudes de becas deportivas.",
+        "dates": "Ene 2024 - Dic 2025",
+        "image": "/images/experience/flash.svg"
+      }
+    ]
+  },
   "LanguageSwitcher": {
     "label": "Cambiar idioma",
     "english": "Inglés",

@@ -5,6 +5,7 @@ import Image from "next/image";
 type CardProps = {
   title: string;
   description: string;
+  dates?: string;
   image?: string;
   parallaxOffset?: number;
   onHoverChange?: (hovering: boolean) => void;
@@ -13,6 +14,7 @@ type CardProps = {
 export default function Card({
   title,
   description,
+  dates,
   image,
   parallaxOffset = 0,
   onHoverChange,
@@ -54,14 +56,14 @@ export default function Card({
         </div>
       )}
 
-      <div className="flex flex-col gap-2 flex-1">
+      <div className="flex flex-col gap-2 justify-center flex-1">
         <div className="flex justify-between">
           <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">
             {title}
           </h3>
 
           <p className="text-sm md:text-base text-white/70 leading-tight">
-            Jan 2025 - Dec 2025
+            {dates}
           </p>
         </div>
 
@@ -69,6 +71,7 @@ export default function Card({
           {description}
         </p>
       </div>
+      
     </div>
   );
 }

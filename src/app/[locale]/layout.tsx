@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 import { DEFAULT_NAVBAR_ITEMS } from "@/types/navbar";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
-import Footer from "@/components/activity/layout/common/Footer";
-import NavBar from "@/components/activity/layout/common/NavBar";
+import Footer from "@/components/layout/Footer";
+import NavBar from "@/components/layout/NavBar";
 import "flag-icons/css/flag-icons.min.css";
 import "./globals.css";
 
