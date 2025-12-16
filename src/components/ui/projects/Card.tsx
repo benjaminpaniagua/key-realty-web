@@ -11,13 +11,13 @@ type CardProps = {
   image?: string;
   link_url?: string;
   git_url?: string;
+  figma_url?: string;
   technologies: TechnologyId[];
   parallaxOffset?: number;
   onHoverChange?: (hovering: boolean) => void;
 };
 
 function useMaxVisibleTechnologies() {
-  // Start with a stable server/client value to avoid hydration mismatch, then adjust on mount.
   const [maxVisible, setMaxVisible] = useState(3);
 
   useEffect(() => {
@@ -45,6 +45,7 @@ export default function Card({
   image,
   link_url,
   git_url,
+  figma_url,
   technologies,
   parallaxOffset = 0,
   onHoverChange,
@@ -109,6 +110,30 @@ export default function Card({
               "
               sizes="100vw"
             />
+            <div className="absolute inset-0 bg-dark-blue/20" />
+            
+            {/* TODO: Implementar figma_url cuando sea necesario
+            {figma_url && (
+              <div className="
+                absolute inset-0 flex items-center justify-center
+                bg-black/0 group-hover:bg-black/30
+                transition-all duration-500
+              ">
+                <svg
+                  className="
+                    w-14 h-14 text-white
+                    opacity-0 group-hover:opacity-100
+                    scale-75 group-hover:scale-100
+                    transition-all duration-500
+                  "
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                </svg>
+              </div>
+            )}
+            */}
           </div>
         </div>
       )}

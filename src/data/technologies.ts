@@ -2,29 +2,9 @@ import type { Technology } from "@/types/technology";
 
 export const TECHNOLOGIES: Technology[] = [
   {
-    id: "typescript",
-    label: "TypeScript",
-    iconSrc: "images/tech/typescript.svg",
-  },
-  {
-    id: "tailwind",
-    label: "Tailwind CSS",
-    iconSrc: "images/tech/tailwind.svg",
-  },
-  {
     id: "react",
     label: "React",
     iconSrc: "images/tech/react.svg",
-  },
-  {
-    id: "postman",
-    label: "Postman",
-    iconSrc: "images/tech/postman.svg",
-  },
-  {
-    id: "php",
-    label: "PHP",
-    iconSrc: "images/tech/php.svg",
   },
   {
     id: "next",
@@ -32,19 +12,19 @@ export const TECHNOLOGIES: Technology[] = [
     iconSrc: "images/tech/next.svg",
   },
   {
-    id: "material",
-    label: "Material UI",
-    iconSrc: "images/tech/material.svg",
+    id: "html",
+    label: "HTML",
+    iconSrc: "images/tech/html.svg",
   },
   {
-    id: "laravel",
-    label: "Laravel",
-    iconSrc: "images/tech/laravel.svg",
+    id: "css",
+    label: "CSS",
+    iconSrc: "images/tech/css.svg",
   },
   {
-    id: "jira",
-    label: "Jira",
-    iconSrc: "images/tech/jira.svg",
+    id: "typescript",
+    label: "TypeScript",
+    iconSrc: "images/tech/typescript.svg",
   },
   {
     id: "javascript",
@@ -52,9 +32,39 @@ export const TECHNOLOGIES: Technology[] = [
     iconSrc: "images/tech/javascript.svg",
   },
   {
-    id: "html",
-    label: "HTML",
-    iconSrc: "images/tech/html.svg",
+    id: "tailwind",
+    label: "Tailwind CSS",
+    iconSrc: "images/tech/tailwind.svg",
+  },
+  {
+    id: "material",
+    label: "Material UI",
+    iconSrc: "images/tech/material.svg",
+  },
+  {
+    id: "chart",
+    label: "Chart.js",
+    iconSrc: "images/tech/chart.svg",
+  },
+  {
+    id: "php",
+    label: "PHP",
+    iconSrc: "images/tech/php.svg",
+  },
+  {
+    id: "laravel",
+    label: "Laravel",
+    iconSrc: "images/tech/laravel.svg",
+  },
+  {
+    id: "aspnet",
+    label: "ASP.NET",
+    iconSrc: "images/tech/aspnet.svg",
+  },
+  {
+    id: "mysql",
+    label: "MySQL",
+    iconSrc: "images/tech/mysql.svg",
   },
   {
     id: "github",
@@ -67,23 +77,18 @@ export const TECHNOLOGIES: Technology[] = [
     iconSrc: "images/tech/figma.svg",
   },
   {
-    id: "css",
-    label: "CSS",
-    iconSrc: "images/tech/css.svg",
+    id: "postman",
+    label: "Postman",
+    iconSrc: "images/tech/postman.svg",
   },
   {
-    id: "chart",
-    label: "Chart.js",
-    iconSrc: "images/tech/chart.svg",
-  },
-  {
-    id: "aspnet",
-    label: "ASP.NET",
-    iconSrc: "images/tech/aspnet.svg",
+    id: "jira",
+    label: "Jira",
+    iconSrc: "images/tech/jira.svg",
   },
   {
     id: "asana",
     label: "Asana",
     iconSrc: "images/tech/asana.svg",
-  },
+  }
 ];

@@ -114,41 +114,58 @@
     ]
   },
   "Projects": {
-    "cards": [
-      {
-        "id": 1,
-        "title": "Attimo",
-        "description": "Un portfolio rápido, accesible y minimalista.",
-        "image": "/images/projects/attimo.png",
-        "link_url": "https://portfolio.example.com",
-        "technologies": ["next", "tailwind", "typescript", "php", "figma", "github", "jira"]
-      },
-      {
-        "id": 2,
-        "title": "NexDevs",
-        "description": "Interfaz dinámica para administración de datos.",
-        "image": "/images/projects/nexdevs.png",
-        "link_url": "https://dashboard.example.com",
-        "technologies": ["typescript", "tailwind"]
-      },
-      {
-        "id": 3,
-        "title": "Sultan of Flavors",
-        "description": "Sistema de mensajería en tiempo real.",
-        "image": "/images/projects/sultanFlavors.png",
-        "link_url": "https://chat.example.com",
-        "technologies": ["typescript"]
-      },
-      {
-        "id": 4,
-        "title": "Integración Chat API",
-        "description": "Sistema de mensajería en tiempo real.",
-        "image": "/projects/chat.png",
-        "link_url": "https://chat.example.com",
-        "technologies": ["typescript"]
-      }
-    ]
-  },
+  "cards": [
+    {
+      "id": 1,
+      "title": "EdsaWind",
+      "description": "Plataforma web corporativa enfocada en la presentación de servicios especializados para el sector eólico. El sitio muestra soluciones como reparación de aspas, fabricación de piezas de izaje y mantenimiento técnico, priorizando una navegación clara y una comunicación profesional.",
+      "image": "/images/projects/edsawind.png",
+      "link_url": "https://dev.edsawind.com/",
+      "technologies": ["next", "tailwind", "typescript", "github", "jira"]
+    },
+    {
+      "id": 2,
+      "title": "Sloths Territory",
+      "description": "Sitio web informativo para una empresa de turismo ecológico que ofrece tours diurnos y nocturnos. La plataforma destaca la observación de fauna silvestre y busca transmitir conexión con la naturaleza mediante una experiencia de usuario clara y atractiva.",
+      "image": "/images/projects/sloths.png",
+      "link_url": "https://slothsterritory.com/",
+      "technologies": ["next", "tailwind", "typescript", "github", "jira", "laravel", "mysql"]
+    },
+    {
+      "id": 3,
+      "title": "Super Quads",
+      "description": "Página web promocional enfocada en recorridos en quad y experiencias de aventura. El proyecto presenta rutas y servicios mediante una interfaz dinámica e interactiva, reforzando el carácter aventurero de la marca y mejorando la experiencia del usuario.",
+      "image": "/images/projects/superquads.png",
+      "link_url": "https://dev.superquadscr.com/",
+      "technologies": ["next", "tailwind", "typescript", "github", "jira", "laravel", "mysql"]
+    },
+    {
+      "id": 4,
+      "title": "Finca Educativa Don Juan",
+      "description": "Plataforma web informativa que muestra los servicios educativos y turísticos ofrecidos por la finca. El sitio presenta actividades y experiencias de forma ordenada, con un diseño accesible que facilita la comprensión de la información para los visitantes.",
+      "image": "/images/projects/fincaeducativadonjuan.png",
+      "link_url": "https://dev.fincaeducativadonjuan.com/",
+      "technologies": ["next", "tailwind", "typescript", "github", "jira", "laravel", "mysql"]
+    },
+    {
+      "id": 5,
+      "title": "Network App",
+      "description": "Aplicación web diseñada para conectar pequeñas y medianas empresas con usuarios interesados en descubrir servicios locales. La plataforma permite a las pymes promocionar su oferta de manera organizada y fortalecer su visibilidad digital.",
+      "image": "/images/projects/nexdevs.png",
+      "link_url": "https://dashboard.example.com",
+      "technologies": ["react", "tailwind", "javascript", "github", "asana", "aspnet", "mysql"]
+    },
+    {
+      "id": 6,
+      "title": "Sultan of Flavors",
+      "description": "Plataforma web orientada a la gestión de cursos y eventos impartidos por profesores. El proyecto integra gráficos interactivos mediante Chart.js para visualizar el progreso académico de forma clara, ofreciendo una experiencia funcional e intuitiva tanto para estudiantes como para docentes.",
+      "image": "/images/projects/sultanFlavors.png",
+      "link_url": "https://chat.example.com",
+      "technologies": ["html", "css", "javascript", "github", "asana", "php", "mysql"]
+    }
+  ]
+}
+  ,
   "LanguageSwitcher": {
     "label": "Cambiar idioma",
     "english": "Inglés",

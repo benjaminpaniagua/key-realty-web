@@ -9,15 +9,13 @@ const AUTOPLAY_DELAY = 8000;
 const SWIPE_THRESHOLD = 50;
 
 function useItemsPerSlide() {
-  const [items, setItems] = useState(2);
+  const [items, setItems] = useState(1);
   useEffect(() => {
     const check = () => {
-      if (
-        window.matchMedia("(min-width: 768px) and (max-width: 1023px)").matches
-      ) {
-        setItems(1);
-      } else {
+      if (window.matchMedia("(min-width: 1024px)").matches) {
         setItems(2);
+      } else {
+        setItems(1);
       }
     };
     check();

@@ -15,7 +15,8 @@ export type TechnologyId =
   | "css"
   | "chart"
   | "aspnet"
-  | "asana";
+  | "asana"
+  | "mysql";
   
 export type Technology = {
   id: TechnologyId;
