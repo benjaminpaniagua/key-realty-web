@@ -114,6 +114,82 @@
       }
     ]
   },
+  "Projects": {
+    "cards": [
+      {
+        "id": 1,
+        "title": "Modern Portfolio",
+        "description": "A fast, accessible and minimalist portfolio.",
+        "image": "/images/projects/attimo.png",
+        "link_url": "https://portfolio.example.com",
+        "technologies": ["next", "tailwind", "typescript", "php", "figma", "github", "jira"]
+      },
+      {
+        "id": 2,
+        "title": "Dashboard UI",
+        "description": "Dynamic interface for data administration.",
+        "image": "/images/projects/nexdevs.png",
+        "link_url": "https://dashboard.example.com",
+        "technologies": ["typescript", "tailwind"]
+      },
+      {
+        "id": 3,
+        "title": "Chat API Integration",
+        "description": "Real-time messaging system.",
+        "image": "/images/projects/sultanFlavors.png",
+        "link_url": "https://chat.example.com",
+        "technologies": ["typescript"]
+      },
+      {
+        "id": 4,
+        "title": "Chat API Integration",
+        "description": "Real-time messaging system.",
+        "image": "/projects/chat.png",
+        "link_url": "https://chat.example.com",
+        "technologies": ["typescript"]
+      },
+      {
+        "id": 5,
+        "title": "Chat API Integration",
+        "description": "Real-time messaging system.",
+        "image": "/projects/chat.png",
+        "link_url": "https://chat.example.com",
+        "technologies": ["typescript"]
+      },
+      {
+        "id": 6,
+        "title": "Chat API Integration",
+        "description": "Real-time messaging system.",
+        "image": "/projects/chat.png",
+        "link_url": "https://chat.example.com",
+        "technologies": ["typescript"]
+      },
+      {
+        "id": 7,
+        "title": "Chat API Integration",
+        "description": "Real-time messaging system.",
+        "image": "/projects/chat.png",
+        "link_url": "https://chat.example.com",
+        "technologies": ["typescript"]
+      },
+      {
+        "id": 8,
+        "title": "Chat API Integration",
+        "description": "Real-time messaging system.",
+        "image": "/projects/chat.png",
+        "link_url": "https://chat.example.com",
+        "technologies": ["typescript"]
+      },
+      {
+        "id": 9,
+        "title": "Chat API Integration",
+        "description": "Real-time messaging system.",
+        "image": "/projects/chat.png",
+        "link_url": "https://chat.example.com",
+        "technologies": ["typescript"]
+      }
+    ]
+  },
   "LanguageSwitcher": {
     "label": "Change language",
     "english": "English",

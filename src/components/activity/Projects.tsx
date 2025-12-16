@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState, type TouchEvent } from "react";
+import { useTranslations } from "next-intl";
 import Card from "@/components/ui/projects/Card";
-import { CARDS } from "@/data/cardsProjects";
 import type { CardItem } from "@/types/cardProjects";
 
 const AUTOPLAY_DELAY = 8000;
@@ -38,10 +38,12 @@ function chunkCards(cards: CardItem[], size: number): CardItem[][] {
 }
 
 export default function Projects() {
+  const t = useTranslations("Projects");
+  const cards = t.raw("cards") as CardItem[];
   const itemsPerSlide = useItemsPerSlide();
   const slides = useMemo<CardItem[][]>(
-    () => chunkCards(CARDS, itemsPerSlide),
-    [itemsPerSlide]
+    () => chunkCards(cards, itemsPerSlide),
+    [itemsPerSlide, cards]
   );
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -171,6 +173,7 @@ export default function Projects() {
                     >
                       <Card
                         {...card}
+                        technologies={card.technologies || []}
                         parallaxOffset={
                           slideIndex === currentSlide ? parallaxOffset : 0
                         }

@@ -113,6 +113,42 @@
       }
     ]
   },
+  "Projects": {
+    "cards": [
+      {
+        "id": 1,
+        "title": "Attimo",
+        "description": "Un portfolio rápido, accesible y minimalista.",
+        "image": "/images/projects/attimo.png",
+        "link_url": "https://portfolio.example.com",
+        "technologies": ["next", "tailwind", "typescript", "php", "figma", "github", "jira"]
+      },
+      {
+        "id": 2,
+        "title": "NexDevs",
+        "description": "Interfaz dinámica para administración de datos.",
+        "image": "/images/projects/nexdevs.png",
+        "link_url": "https://dashboard.example.com",
+        "technologies": ["typescript", "tailwind"]
+      },
+      {
+        "id": 3,
+        "title": "Sultan of Flavors",
+        "description": "Sistema de mensajería en tiempo real.",
+        "image": "/images/projects/sultanFlavors.png",
+        "link_url": "https://chat.example.com",
+        "technologies": ["typescript"]
+      },
+      {
+        "id": 4,
+        "title": "Integración Chat API",
+        "description": "Sistema de mensajería en tiempo real.",
+        "image": "/projects/chat.png",
+        "link_url": "https://chat.example.com",
+        "technologies": ["typescript"]
+      }
+    ]
+  },
   "LanguageSwitcher": {
     "label": "Cambiar idioma",
     "english": "Inglés",
