@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div className='flex justify-between items-center text-sm p-12 font-inter'>
+    <div className='flex justify-between items-center text-sm font-inter px-8 py-8'>
         <p className='text-white/70'>Copyright &copy; {new Date().getFullYear()} Benjamin Paniagua Rojas</p>
          <IconsButton items={DEFAULT_ICON_ITEMS} />
     </div>
