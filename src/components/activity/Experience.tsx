@@ -115,7 +115,7 @@ export default function Experience() {
     <section id="experience" className="py-16 md:py-24">
       <div className="mx-auto max-w-[1440px]">
         <h2 className="text-4xl md:text-5xl font-bold text-center text-white">
-          My work <span className="text-purple">experience</span>
+          {t("title")} <span className="text-purple">{t("titleHighlight")}</span>
         </h2>
 
         {/* Desktop - Grid view without slider */}

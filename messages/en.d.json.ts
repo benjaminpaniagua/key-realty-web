@@ -91,6 +91,8 @@ declare const messages: {
     }
   },
   "Experience": {
+    "title": "My work",
+    "titleHighlight": "experience",
     "cards": [
       {
         "id": 1,
@@ -116,6 +118,8 @@ declare const messages: {
     ]
   },
   "Projects": {
+    "title": "A small selection of",
+    "titleHighlight": "recent projects",
     "cards": [
       {
         "id": 1,

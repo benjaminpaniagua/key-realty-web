@@ -124,8 +124,8 @@ export default function Projects() {
     <section id="projects" className="py-16 md:py-24">
       <div className="mx-auto max-w-[1440px]">
         <h2 className="text-4xl md:text-5xl font-bold text-center text-white">
-          A small selection of{" "}
-          <span className="text-purple">recent projects</span>
+          {t("title")}{" "}
+          <span className="text-purple">{t("titleHighlight")}</span>
         </h2>
 
         <div className="relative mt-12 md:mt-24">

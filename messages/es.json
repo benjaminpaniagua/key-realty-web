@@ -89,6 +89,8 @@
     }
   },
   "Experience": {
+    "title": "Mi experiencia",
+    "titleHighlight": "laboral",
     "cards": [
       {
         "id": 1,
@@ -114,6 +116,8 @@
     ]
   },
   "Projects": {
+    "title": "Una pequeña selección de",
+    "titleHighlight": "proyectos recientes",
     "cards": [
       {
         "id": 1,
