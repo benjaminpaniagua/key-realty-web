@@ -57,7 +57,7 @@ export default function Card({
       )}
 
       <div className="flex flex-col gap-2 justify-center flex-1">
-        <div className="flex justify-between">
+        <div className="flex flex-col xl:flex-row justify-between">
           <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">
             {title}
           </h3>
