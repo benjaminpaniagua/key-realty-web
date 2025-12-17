@@ -128,7 +128,15 @@
         "description": "Informational website for an eco-tourism company offering daytime and nighttime tours. The platform highlights wildlife observation and aims to convey a strong connection with nature through a clear and engaging user experience.",
         "image": "/images/projects/sloths.png",
         "link_url": "https://slothsterritory.com/",
-        "technologies": ["next", "tailwind", "typescript", "github", "jira", "laravel", "mysql"]
+        "technologies": [
+          "next",
+          "tailwind",
+          "typescript",
+          "github",
+          "jira",
+          "laravel",
+          "mysql"
+        ]
       },
       {
         "id": 3,
@@ -136,7 +144,15 @@
         "description": "Promotional website focused on quad tours and adventure experiences. The project presents routes and services through a dynamic and interactive interface, reinforcing the brand’s adventurous identity and enhancing user experience.",
         "image": "/images/projects/superquads.png",
         "link_url": "https://dev.superquadscr.com/",
-        "technologies": ["next", "tailwind", "typescript", "github", "jira", "laravel", "mysql"]
+        "technologies": [
+          "next",
+          "tailwind",
+          "typescript",
+          "github",
+          "jira",
+          "laravel",
+          "mysql"
+        ]
       },
       {
         "id": 4,
@@ -144,23 +160,49 @@
         "description": "Informational web platform showcasing the educational and tourism services offered by the farm. The site presents activities and experiences in an organized way, using an accessible design that makes information easy to understand.",
         "image": "/images/projects/fincaeducativadonjuan.png",
         "link_url": "https://dev.fincaeducativadonjuan.com/",
-        "technologies": ["next", "tailwind", "typescript", "github", "jira", "laravel", "mysql"]
+        "technologies": [
+          "next",
+          "tailwind",
+          "typescript",
+          "github",
+          "jira",
+          "laravel",
+          "mysql"
+        ]
       },
       {
         "id": 5,
         "title": "Network App",
         "description": "Web application designed to connect small and medium-sized businesses with users interested in discovering local services. The platform allows SMEs to promote their offerings in an organized way and strengthen their digital visibility.",
         "image": "/images/projects/nexdevs.png",
-        "link_url": "https://dashboard.example.com",
-        "technologies": ["react", "tailwind", "javascript", "github", "asana", "aspnet", "mysql"]
+        "git_url": "https://github.com/benjaminpaniagua/NexDevs---Development",
+        "technologies": [
+          "react",
+          "tailwind",
+          "javascript",
+          "github",
+          "asana",
+          "aspnet",
+          "mysql"
+        ]
       },
       {
         "id": 6,
         "title": "Attimo",
         "description": "Web platform focused on managing courses and events taught by professors. The project integrates interactive charts using Chart.js to clearly display academic progress, providing a functional and intuitive experience for both students and teachers.",
         "image": "/images/projects/attimo.png",
-        "link_url": "https://chat.example.com",
-        "technologies": ["react", "tailwind", "javascript", "github", "asana", "laravel", "mysql", "chartjs", "figma"]
+        "git_url": "https://github.com/benjaminpaniagua/attimo",
+        "technologies": [
+          "react",
+          "tailwind",
+          "javascript",
+          "github",
+          "asana",
+          "laravel",
+          "mysql",
+          "chartjs",
+          "figma"
+        ]
       }
     ]
   },

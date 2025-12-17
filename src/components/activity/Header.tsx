@@ -23,7 +23,7 @@ export default function Header() {
         <span className="text-purple">{t("occupation")}</span>
       </h1>
 
-      <p className="text-base md:text-xl font-normal text-white/90 max-w-2xl">
+      <p className="text-base md:text-xl font-medium text-white/90 max-w-2xl">
         {t("subtitle2")}
       </p>
       <Button text={t("btnCV")} icon="/images/icons/download.svg" iconAlt="Download icon" pdfUrl={t("pdfUrl")} />
