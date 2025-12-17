@@ -50,7 +50,8 @@ declare const messages: {
   },
   "Layout": {
     "title": "Portfolio - Benjamin Paniagua",
-    "description": "Developed by Benjamin Paniagua"
+    "description": "Developed by Benjamin Paniagua",
+    "keywords": "frontend developer, web development, react, next.js, portfolio"
   },
   "Header": {
     "name": "Benjamin Paniagua",
@@ -217,6 +218,9 @@ declare const messages: {
     "label": "Change language",
     "english": "English",
     "spanish": "Spanish"
+  },
+  "Footer": {
+    "copyright": "Copyright © {year} Benjamin Paniagua Rojas"
   }
 };
 export default messages;

@@ -47,7 +47,8 @@
   },
   "Layout": {
     "title": "Portafolio - Benjamin Paniagua",
-    "description": "Desarrollado por Benjamin Paniagua"
+    "description": "Desarrollado por Benjamin Paniagua",
+    "keywords": "desarrollador frontend, desarrollo web, react, next.js, portafolio"
   },
   "Header": {
     "name": "Benjamin Paniagua",
@@ -214,5 +215,8 @@
     "label": "Cambiar idioma",
     "english": "Inglés",
     "spanish": "Español"
+  },
+  "Footer": {
+    "copyright": "Copyright © {year} Benjamin Paniagua Rojas"
   }
 }
