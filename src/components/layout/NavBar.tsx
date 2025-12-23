@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
 import { NavBarItems } from "@/types/navbar";
 import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -15,50 +14,6 @@ export default function NavBar({ items, className }: NavBarProps) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
-  const navItemsRef = useRef<(HTMLLIElement | null)[]>([]);
-
-  useEffect(() => {
-    // Animación de la barra navbar
-    if (navRef.current) {
-      gsap.fromTo(
-        navRef.current,
-        {
-          opacity: 0,
-          y: -30,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.easeOut",
-          delay: 0.2,
-        }
-      );
-    }
-
-    // Animación de los items del navbar
-    const validItems = navItemsRef.current.filter((item) => item !== null);
-    if (validItems.length > 0) {
-      gsap.fromTo(
-        validItems,
-        {
-          opacity: 0,
-          y: -20,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "power2.easeOut",
-          stagger: {
-            amount: 0.2,
-            from: "start",
-          },
-          delay: 0.3,
-        }
-      );
-    }
-  }, []);
 
   const handleNavigation = (item: NavBarItems) => {
     if (item.id === "home") {
@@ -148,12 +103,9 @@ export default function NavBar({ items, className }: NavBarProps) {
           </button>
 
           <ul className="hidden md:flex items-center gap-8 lg:gap-12">
-            {items.map((item, index) => (
+            {items.map((item) => (
               <li
                 key={item.id}
-                ref={(el) => {
-                  if (el) navItemsRef.current[index] = el;
-                }}
                 className="relative group text-white hover:text-white/80 cursor-pointer transition-colors duration-300"
               >
                 <button
@@ -181,7 +133,7 @@ export default function NavBar({ items, className }: NavBarProps) {
         {isOpen && (
           <div className="md:hidden mt-4 pt-4 border-t border-white/10 animate-in fade-in duration-200">
             <ul className="flex flex-col gap-3">
-              {items.map((item, index) => (
+              {items.map((item) => (
                 <li key={item.id} className="text-white/80 hover:text-white cursor-pointer transition-colors duration-300">
                   <button
                     type="button"

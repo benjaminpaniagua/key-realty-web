@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, type TouchEvent, useRef } from "react";
-import gsap from "gsap";
+import { useEffect, useMemo, useState, type TouchEvent } from "react";
 import { useTranslations } from "next-intl";
 import Card from "@/components/ui/projects/Card";
 import type { CardItem } from "@/types/cardProjects";
@@ -10,14 +9,10 @@ const AUTOPLAY_DELAY = 8000;
 const SWIPE_THRESHOLD = 50;
 
 function useItemsPerSlide() {
-  const [items, setItems] = useState(2);
+  const [items, setItems] = useState(1);
   useEffect(() => {
     const check = () => {
-      if (
-        window.matchMedia("(min-width: 768px) and (max-width: 1023px)").matches
-      ) {
-        setItems(1);
-      } else if (window.matchMedia("(min-width: 1024px)").matches) {
+      if (window.matchMedia("(min-width: 1024px)").matches) {
         setItems(2);
       } else {
         setItems(1);
@@ -42,9 +37,8 @@ function chunkCards(cards: CardItem[], size: number): CardItem[][] {
 
 export default function Projects() {
   const t = useTranslations("Projects");
-  const itemsPerSlide = useItemsPerSlide();
-  const sectionRef = useRef<HTMLElement>(null);
   const cards = t.raw("cards") as CardItem[];
+  const itemsPerSlide = useItemsPerSlide();
   const slides = useMemo<CardItem[][]>(
     () => chunkCards(cards, itemsPerSlide),
     [itemsPerSlide, cards]
@@ -57,53 +51,6 @@ export default function Projects() {
   const [isPaused, setIsPaused] = useState(false);
 
   const totalSlides = slides.length;
-
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px",
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const cards = entry.target.querySelectorAll(".projects-card");
-          
-          if (cards.length > 0) {
-            gsap.fromTo(
-              cards,
-              {
-                opacity: 0,
-                y: 40,
-                scale: 0.9,
-              },
-              {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 1.2,
-                ease: "power2.easeOut",
-                stagger: {
-                  amount: 0.3,
-                  from: "start",
-                },
-              }
-            );
-          }
-        }
-      });
-    }, observerOptions);
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
 
   useEffect(() => {
     if (totalSlides <= 1 || isPaused) return;
@@ -174,9 +121,9 @@ export default function Projects() {
   };
 
   return (
-    <section ref={sectionRef} id="projects" className="py-16 md:py-24">
+    <section id="projects" className="py-16 md:py-24">
       <div className="mx-auto max-w-[1440px]">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-white projects-card">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-white">
           {t("title")}{" "}
           <span className="text-purple">{t("titleHighlight")}</span>
         </h2>
@@ -214,13 +161,13 @@ export default function Projects() {
                   {slideCards.map((card, index) => (
                     <div
                       key={card.id}
-                      className={`projects-card ${
+                      className={
                         slideCards.length === 1
                           ? "w-full max-w-full"
                           : index === 1
                           ? "hidden md:block"
                           : "block"
-                      }`}
+                      }
                     >
                       <Card
                         {...card}
