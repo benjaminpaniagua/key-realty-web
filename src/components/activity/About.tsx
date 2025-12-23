@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import CodeSection from "@/components/ui/about/CodeSection";
 import CountrySection from "@/components/ui/about/CountrySection";
 import EmailSection from "@/components/ui/about/EmailSection";
@@ -26,19 +30,70 @@ function renderCardContent(variant: AboutCardVariant) {
 }
 
 export default function About() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const cards = entry.target.querySelectorAll(".about-card");
+          
+          if (cards.length > 0) {
+            gsap.fromTo(
+              cards,
+              {
+                opacity: 0,
+                y: 40,
+                scale: 0.4,
+              },
+              {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 1.2,
+                ease: "power2.easeOut",
+                stagger: {
+                  amount: 0.3,
+                  from: "start",
+                },
+              }
+            );
+          }
+        }
+      });
+    }, observerOptions);
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section id="about" className="w-full py-16 lg:py-24 bg-dark-blue">
+    <section ref={sectionRef} id="about" className="w-full py-16 lg:py-24 bg-dark-blue">
       <div className="mx-auto max-w-[1440px]">
         <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:auto-rows-auto">
           {ABOUT_CARDS.map((card) => (
             <article
               key={card.id}
               className={`
+                about-card
                 relative overflow-hidden rounded-3xl
                 border border-white/5
                 bg-light-blue/60
                 shadow-[0_0_60px_rgba(15,23,42,0.6)]
                 backdrop-blur-xl
+                
                 ${card.layout}
               `}
             >

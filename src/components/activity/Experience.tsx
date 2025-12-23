@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState, type TouchEvent } from "react";
+import { useEffect, useMemo, useState, type TouchEvent, useRef } from "react";
+import gsap from "gsap";
 import { useTranslations } from "next-intl";
 import Card from "@/components/ui/experience/Card";
 import type { CardItem } from "@/types/cardProjects";
@@ -21,6 +22,7 @@ function chunkCards(cards: CardItem[], size: number): CardItem[][] {
 
 export default function Experience() {
   const t = useTranslations("Experience");
+  const sectionRef = useRef<HTMLElement>(null);
 
   const cards: CardItem[] = useMemo(
     () =>
@@ -42,6 +44,53 @@ export default function Experience() {
   const [isPaused, setIsPaused] = useState(false);
 
   const totalSlides = slides.length;
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const cards = entry.target.querySelectorAll(".experience-card");
+          
+          if (cards.length > 0) {
+            gsap.fromTo(
+              cards,
+              {
+                opacity: 0,
+                y: 40,
+                scale: 0.9,
+              },
+              {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 1.2,
+                ease: "power2.easeOut",
+                stagger: {
+                  amount: 0.3,
+                  from: "start",
+                },
+              }
+            );
+          }
+        }
+      });
+    }, observerOptions);
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (totalSlides <= 1 || isPaused) return;
@@ -112,24 +161,23 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="py-16 md:py-24">
+    <section ref={sectionRef} id="experience" className="py-16 md:py-24 experience-card">
       <div className="mx-auto max-w-[1440px]">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-white">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-white experience-card">
           {t("title")} <span className="text-purple">{t("titleHighlight")}</span>
         </h2>
 
-        {/* Desktop - Grid view without slider */}
         <div className="hidden md:grid grid-cols-2 gap-4 mt-12 md:mt-24">
           {cards.map((card) => (
-            <Card
-              key={card.id}
-              {...card}
-              onHoverChange={(hovering) => setIsPaused(hovering)}
-            />
+            <div key={card.id} className="experience-card">
+              <Card
+                {...card}
+                onHoverChange={(hovering) => setIsPaused(hovering)}
+              />
+            </div>
           ))}
         </div>
 
-        {/* Mobile - Slider view */}
         <div className="md:hidden relative mt-12">
           <div className="overflow-hidden">
             <div
@@ -153,14 +201,15 @@ export default function Experience() {
                   className="shrink-0 w-full min-w-full"
                 >
                   {slideCards.map((card) => (
-                    <Card
-                      key={card.id}
-                      {...card}
-                      parallaxOffset={
-                        slideIndex === currentSlide ? parallaxOffset : 0
-                      }
-                      onHoverChange={(hovering) => setIsPaused(hovering)}
-                    />
+                    <div key={card.id} className="experience-card">
+                      <Card
+                        {...card}
+                        parallaxOffset={
+                          slideIndex === currentSlide ? parallaxOffset : 0
+                        }
+                        onHoverChange={(hovering) => setIsPaused(hovering)}
+                      />
+                    </div>
                   ))}
                 </div>
               ))}
