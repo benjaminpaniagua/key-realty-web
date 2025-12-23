@@ -2,7 +2,9 @@
 
 import { useEffect, useMemo, useState, type TouchEvent } from "react";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 import Card from "@/components/ui/experience/Card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import type { CardItem } from "@/types/cardProjects";
 
 const AUTOPLAY_DELAY = 8000;
@@ -114,23 +116,48 @@ export default function Experience() {
   return (
     <section id="experience" className="py-16 md:py-24">
       <div className="mx-auto max-w-[1440px]">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-white">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false, amount: 0.5 }}
+          className="text-4xl md:text-5xl font-bold text-center text-white"
+        >
           {t("title")} <span className="text-purple">{t("titleHighlight")}</span>
-        </h2>
+        </motion.h2>
 
         {/* Desktop - Grid view without slider */}
-        <div className="hidden md:grid grid-cols-2 gap-4 mt-12 md:mt-24">
-          {cards.map((card) => (
-            <Card
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="hidden md:grid grid-cols-2 gap-4 mt-12 md:mt-24"
+        >
+          {cards.map((card, index) => (
+            <motion.div
               key={card.id}
-              {...card}
-              onHoverChange={(hovering) => setIsPaused(hovering)}
-            />
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <Card
+                {...card}
+                onHoverChange={(hovering) => setIsPaused(hovering)}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Mobile - Slider view */}
-        <div className="md:hidden relative mt-12">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="md:hidden relative mt-12"
+        >
           <div className="overflow-hidden">
             <div
               className={`flex ${
@@ -148,8 +175,11 @@ export default function Experience() {
               onTouchEnd={handleTouchEnd}
             >
               {slides.map((slideCards, slideIndex) => (
-                <div
+                <motion.div
                   key={slideIndex}
+                  initial={{ opacity: 0 }}
+                  animate={slideIndex === currentSlide ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ duration: 0.5 }}
                   className="shrink-0 w-full min-w-full"
                 >
                   {slideCards.map((card) => (
@@ -162,17 +192,25 @@ export default function Experience() {
                       onHoverChange={(hovering) => setIsPaused(hovering)}
                     />
                   ))}
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
 
-          <div className="mt-8 flex items-center justify-center gap-3">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.5 }}
+            className="mt-8 flex items-center justify-center gap-3"
+          >
             {getVisibleDots().map((dotIndex) => (
-              <button
+              <motion.button
                 key={dotIndex}
                 type="button"
                 onClick={() => setCurrentSlide(dotIndex)}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.95 }}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   dotIndex === currentSlide
                     ? "w-8 bg-purple animate-pulse"
@@ -180,8 +218,8 @@ export default function Experience() {
                 }`}
               />
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

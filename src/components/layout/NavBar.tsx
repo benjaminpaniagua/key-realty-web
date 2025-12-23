@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { NavBarItems } from "@/types/navbar";
 import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -13,7 +14,7 @@ type NavBarProps = {
 export default function NavBar({ items, className }: NavBarProps) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const navRef = useRef<HTMLElement | null>(null);
+  const navRef = useRef<HTMLDivElement | null>(null);
 
   const handleNavigation = (item: NavBarItems) => {
     if (item.id === "home") {
@@ -78,7 +79,14 @@ export default function NavBar({ items, className }: NavBarProps) {
     <div
       className={`flex justify-center py-4 md:py-8 font-inter ${className} fixed md:absolute top-0 left-0 right-0 z-50`}
     >
-      <nav ref={navRef} className="bg-dark-blue/70 px-6 md:px-8 py-3 md:py-4 rounded-lg backdrop-blur-lg border border-white/10 w-[95%] md:w-auto mx-auto md:mx-0 shadow-lg">
+      <motion.div
+        ref={navRef}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-dark-blue/70 px-6 md:px-8 py-3 md:py-4 rounded-lg backdrop-blur-lg border border-white/10 w-[95%] md:w-auto mx-auto md:mx-0 shadow-lg"
+      >
+        <nav className="w-full">
         <div className="flex items-center justify-between md:justify-start gap-4">
           <button
             type="button"
@@ -102,28 +110,40 @@ export default function NavBar({ items, className }: NavBarProps) {
             </span>
           </button>
 
-          <ul className="hidden md:flex items-center gap-8 lg:gap-12">
-            {items.map((item) => (
-              <li
+          <motion.ul
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="hidden md:flex items-center gap-8 lg:gap-12"
+          >
+            {items.map((item, index) => (
+              <motion.li
                 key={item.id}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
                 className="relative group text-white hover:text-white/80 cursor-pointer transition-colors duration-300"
               >
-                <button
+                <motion.button
                   type="button"
                   onClick={() => handleNavigation(item)}
-                  className="bg-transparent text-inherit p-0 text-sm lg:text-base font-medium"
+                  whileHover={{ color: "rgba(168, 85, 247, 0.8)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-transparent text-inherit p-0 text-sm lg:text-base font-medium transition-colors"
                   aria-label={`Go to ${item.label}`}
                 >
                   {item.label}
-                </button>
-                <span
-                  className="
-                    absolute left-1/2 -bottom-1.5 h-1 w-1 rounded-full bg-purple opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-125 group-hover:translate-y-1 -translate-x-1/2"
-                ></span>
-              </li>
+                </motion.button>
+                <motion.span
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute left-1/2 -bottom-1.5 h-1 w-1 rounded-full bg-purple origin-left -translate-x-1/2"
+                />
+              </motion.li>
             ))}
             <LanguageSwitcher />
-          </ul>
+          </motion.ul>
 
           <div className="md:hidden ml-auto">
             <LanguageSwitcher />
@@ -131,24 +151,44 @@ export default function NavBar({ items, className }: NavBarProps) {
         </div>
 
         {isOpen && (
-          <div className="md:hidden mt-4 pt-4 border-t border-white/10 animate-in fade-in duration-200">
-            <ul className="flex flex-col gap-3">
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden mt-4 pt-4 border-t border-white/10"
+          >
+            <motion.ul
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ staggerChildren: 0.1, delayChildren: 0.1 }}
+              className="flex flex-col gap-3"
+            >
               {items.map((item) => (
-                <li key={item.id} className="text-white/80 hover:text-white cursor-pointer transition-colors duration-300">
-                  <button
+                <motion.li
+                  key={item.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="text-white/80 hover:text-white cursor-pointer transition-colors duration-300"
+                >
+                  <motion.button
                     type="button"
                     onClick={() => handleNavigation(item)}
-                    className="bg-transparent text-inherit p-2 px-0 w-full text-left text-sm font-medium hover:translate-x-1 transition-transform duration-300"
+                    whileHover={{ x: 8 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-transparent text-inherit p-2 px-0 w-full text-left text-sm font-medium transition-transform duration-300"
                     aria-label={`Go to ${item.label}`}
                   >
                     {item.label}
-                  </button>
-                </li>
+                  </motion.button>
+                </motion.li>
               ))}
-            </ul>
-          </div>
+            </motion.ul>
+          </motion.div>
         )}
-      </nav>
+        </nav>
+      </motion.div>
     </div>
   );
 }

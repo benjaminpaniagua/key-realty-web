@@ -2,7 +2,9 @@
 
 import { useEffect, useMemo, useState, type TouchEvent } from "react";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 import Card from "@/components/ui/projects/Card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import type { CardItem } from "@/types/cardProjects";
 
 const AUTOPLAY_DELAY = 8000;
@@ -123,12 +125,24 @@ export default function Projects() {
   return (
     <section id="projects" className="py-16 md:py-24">
       <div className="mx-auto max-w-[1440px]">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-white">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false, amount: 0.5 }}
+          className="text-4xl md:text-5xl font-bold text-center text-white"
+        >
           {t("title")}{" "}
           <span className="text-purple">{t("titleHighlight")}</span>
-        </h2>
+        </motion.h2>
 
-        <div className="relative mt-12 md:mt-24">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="relative mt-12 md:mt-24"
+        >
           <div className="overflow-hidden">
             <div
               className={`flex ${
@@ -146,8 +160,11 @@ export default function Projects() {
               onTouchEnd={handleTouchEnd}
             >
               {slides.map((slideCards, slideIndex) => (
-                <div
+                <motion.div
                   key={slideIndex}
+                  initial={{ opacity: 0 }}
+                  animate={slideIndex === currentSlide ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ duration: 0.5 }}
                   className={`shrink-0 w-full min-w-full py-2 px-[.15rem] ${
                     slideCards.length === 1
                       ? "flex justify-center items-center"
@@ -159,8 +176,11 @@ export default function Projects() {
                   }`}
                 >
                   {slideCards.map((card, index) => (
-                    <div
+                    <motion.div
                       key={card.id}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={slideIndex === currentSlide ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.5 }}
                       className={
                         slideCards.length === 1
                           ? "w-full max-w-full"
@@ -177,19 +197,27 @@ export default function Projects() {
                         }
                         onHoverChange={(hovering) => setIsPaused(hovering)}
                       />
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
 
-          <div className="mt-12 flex items-center justify-center gap-3">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.5 }}
+            className="mt-12 flex items-center justify-center gap-3"
+          >
             {getVisibleDots().map((dotIndex) => (
-              <button
+              <motion.button
                 key={dotIndex}
                 type="button"
                 onClick={() => setCurrentSlide(dotIndex)}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.95 }}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   dotIndex === currentSlide
                     ? "w-8 bg-purple animate-pulse"
@@ -197,8 +225,8 @@ export default function Projects() {
                 }`}
               />
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import CodeSection from "@/components/ui/about/CodeSection";
 import CountrySection from "@/components/ui/about/CountrySection";
 import EmailSection from "@/components/ui/about/EmailSection";
@@ -25,20 +28,51 @@ function renderCardContent(variant: AboutCardVariant) {
   }
 }
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+    },
+  },
+};
+
 export default function About() {
   return (
     <section id="about" className="w-full py-16 lg:py-24 bg-dark-blue">
       <div className="mx-auto max-w-[1440px]">
-        <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:auto-rows-auto">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.1 }}
+          className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:auto-rows-auto"
+        >
           {ABOUT_CARDS.map((card) => (
-            <article
+            <motion.article
               key={card.id}
+              variants={cardVariants}
               className={`
                 relative overflow-hidden rounded-3xl
                 border border-white/5
                 bg-light-blue/60
                 shadow-[0_0_60px_rgba(15,23,42,0.6)]
                 backdrop-blur-xl
+                transition-all duration-300 hover:shadow-[0_0_80px_rgba(79,70,229,0.4)] hover:border-white/10
                 ${card.layout}
               `}
             >
@@ -48,9 +82,9 @@ export default function About() {
               <div className="relative h-full">
                 {renderCardContent(card.variant)}
               </div>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
