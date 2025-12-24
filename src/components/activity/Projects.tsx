@@ -7,7 +7,7 @@ import Card from "@/components/ui/projects/Card";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import type { CardItem } from "@/types/cardProjects";
 
-const AUTOPLAY_DELAY = 8000;
+const AUTOPLAY_DELAY = 10000;
 const SWIPE_THRESHOLD = 50;
 
 function useItemsPerSlide() {
@@ -48,9 +48,11 @@ export default function Projects() {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [mouseStartX, setMouseStartX] = useState<number | null>(null);
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [autoplayKey, setAutoplayKey] = useState(0);
 
   const totalSlides = slides.length;
 
@@ -62,7 +64,7 @@ export default function Projects() {
     }, AUTOPLAY_DELAY);
 
     return () => clearInterval(interval);
-  }, [totalSlides, isPaused]);
+  }, [totalSlides, isPaused, autoplayKey]);
 
   const goToNext = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -98,6 +100,36 @@ export default function Projects() {
     setDragOffset(0);
     setIsDragging(false);
     setIsPaused(false);
+    setAutoplayKey((prev) => prev + 1);
+  };
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    setMouseStartX(e.clientX);
+    setDragOffset(0);
+    setIsDragging(false);
+    setIsPaused(true);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (mouseStartX === null) return;
+
+    const deltaX = e.clientX - mouseStartX;
+    setDragOffset(deltaX);
+
+    if (Math.abs(deltaX) > 5) setIsDragging(true);
+  };
+
+  const handleMouseUp = () => {
+    if (isDragging) {
+      if (dragOffset > SWIPE_THRESHOLD) goToPrev();
+      else if (dragOffset < -SWIPE_THRESHOLD) goToNext();
+    }
+
+    setMouseStartX(null);
+    setDragOffset(0);
+    setIsDragging(false);
+    setIsPaused(false);
+    setAutoplayKey((prev) => prev + 1);
   };
 
   const parallaxOffset = dragOffset * 0.12;
@@ -158,6 +190,11 @@ export default function Projects() {
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+              draggable={false}
             >
               {slides.map((slideCards, slideIndex) => (
                 <motion.div
@@ -215,7 +252,10 @@ export default function Projects() {
               <motion.button
                 key={dotIndex}
                 type="button"
-                onClick={() => setCurrentSlide(dotIndex)}
+                onClick={() => {
+                  setCurrentSlide(dotIndex);
+                  setAutoplayKey((prev) => prev + 1);
+                }}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.95 }}
                 className={`h-2 rounded-full transition-all duration-300 ${
