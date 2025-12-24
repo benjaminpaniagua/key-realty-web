@@ -212,11 +212,8 @@ export default function Experience() {
               draggable={false}
             >
               {slides.map((slideCards, slideIndex) => (
-                <motion.div
+                <div
                   key={slideIndex}
-                  initial={{ opacity: 0 }}
-                  animate={slideIndex === currentSlide ? { opacity: 1 } : { opacity: 0 }}
-                  transition={{ duration: 0.5 }}
                   className="shrink-0 w-full min-w-full"
                 >
                   {slideCards.map((card) => (
@@ -229,7 +226,7 @@ export default function Experience() {
                       onHoverChange={(hovering) => setIsPaused(hovering)}
                     />
                   ))}
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

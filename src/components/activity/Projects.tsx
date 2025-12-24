@@ -197,27 +197,17 @@ export default function Projects() {
               draggable={false}
             >
               {slides.map((slideCards, slideIndex) => (
-                <motion.div
+                <div
                   key={slideIndex}
-                  initial={{ opacity: 0 }}
-                  animate={slideIndex === currentSlide ? { opacity: 1 } : { opacity: 0 }}
-                  transition={{ duration: 0.5 }}
                   className={`shrink-0 w-full min-w-full py-2 px-[.15rem] ${
                     slideCards.length === 1
                       ? "flex justify-center items-center"
                       : "grid grid-cols-1 md:grid-cols-2 gap-4"
-                  } transition-opacity duration-500 ${
-                    slideIndex === currentSlide
-                      ? "opacity-100"
-                      : "opacity-0 md:opacity-0 pointer-events-none"
                   }`}
                 >
                   {slideCards.map((card, index) => (
-                    <motion.div
+                    <div
                       key={card.id}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={slideIndex === currentSlide ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.5 }}
                       className={
                         slideCards.length === 1
                           ? "w-full max-w-full"
@@ -234,9 +224,9 @@ export default function Projects() {
                         }
                         onHoverChange={(hovering) => setIsPaused(hovering)}
                       />
-                    </motion.div>
+                    </div>
                   ))}
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
