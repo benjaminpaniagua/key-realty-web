@@ -34,7 +34,7 @@ export default function NavBar() {
               <Link 
                 key={link.href}
                 href={link.href} 
-                className="text-white hover:text-slate-200 transition-colors duration-300 text-sm font-medium"
+                className="text-off-white hover:text-slate-200 transition-colors duration-300 text-sm font-medium"
               >
                 {link.name}
               </Link>
@@ -61,9 +61,9 @@ export default function NavBar() {
               className="lg:hidden flex flex-col gap-1.5 cursor-pointer"
               aria-label="Toggle menu"
             >
-              <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
-              <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></div>
-              <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
+              <div className={`w-6 h-0.5 bg-off-white transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
+              <div className={`w-6 h-0.5 bg-off-white transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></div>
+              <div className={`w-6 h-0.5 bg-off-white transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
             </button>
           </div>
         </div>
@@ -84,14 +84,14 @@ export default function NavBar() {
               <Link 
                 key={link.href}
                 href={link.href} 
-                className="block px-4 text-white/80 hover:text-white transition-colors text-base font-medium"
+                className="block px-4 text-off-white/80 hover:text-off-white transition-colors text-base font-medium"
               >
                 {link.name}
               </Link>
             ))}
             
             {/* mobile-only language switcher and sign up */}
-            <div className="flex flex-col gap-3 px-4 border-t border-white/10 pt-4">
+            <div className="flex flex-col gap-3 px-4 border-t border-off-white/10 pt-4">
               <BtnPrimary 
                 label={tCommon("signUp")}
               />

@@ -80,7 +80,7 @@ export default function LanguageSwitcher({ className }: LanguageSwitcherProps) {
       <button
         type="button"
         onClick={() => setShowLanguages((s) => !s)}
-        className="text-white hover:text-white/80 cursor-pointer transition-all duration-300 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-secondary/10"
+        className="text-off-white hover:text-off-white/80 cursor-pointer transition-all duration-300 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-secondary/10"
         aria-label={t("label")}
         aria-expanded={showLanguages}
       >
@@ -101,8 +101,8 @@ export default function LanguageSwitcher({ className }: LanguageSwitcherProps) {
             onClick={() => handleLanguageChange(locale.code)}
             className={`w-full text-left px-5 py-3 text-sm transition-all duration-200 flex items-center gap-3 border-l-3 ${
               currentLocale === locale.code
-                ? "border-l-white text-white font-semibold"
-                : "border-l-transparent text-white/80 hover:text-white hover:bg-dark/15"
+                ? "border-l-off-white text-off-white font-semibold"
+                : "border-l-transparent text-off-white/80 hover:text-off-white hover:bg-dark/15"
             }`}
           >
             <span className={`fi fi-${locale.flagCode} text-lg`} />

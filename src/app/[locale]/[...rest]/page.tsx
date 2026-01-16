@@ -13,13 +13,13 @@ export default function NotFoundPage() {
         {/* 404 Text */}
         <div className="space-y-4">
           <h1 className="text-7xl md:text-9xl font-bold text-purple">404</h1>
-          <h2 className="text-3xl md:text-5xl font-bold text-white">
+          <h2 className="text-3xl md:text-5xl font-bold text-off-white">
             {t("title")}
           </h2>
         </div>
 
         {/* Description */}
-        <p className="text-base md:text-lg text-white/70 leading-relaxed">
+        <p className="text-base md:text-lg text-off-white/70 leading-relaxed">
           {t("description")}
         </p>
 
@@ -33,7 +33,7 @@ export default function NotFoundPage() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8 relative z-10">
           <Link
             href="/"
-            className="group px-8 py-4 rounded-2xl bg-linear-to-r from-light-blue to-blue border-2 border-light-blue text-white text-base md:text-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-light-blue hover:border-dark-blue"
+            className="group px-8 py-4 rounded-2xl bg-linear-to-r from-light-blue to-blue border-2 border-light-blue text-off-white text-base md:text-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-light-blue hover:border-dark-blue"
           >
             <span className="transition-transform group-hover:-translate-x-1">{t("goBackHome")}</span>
           </Link>

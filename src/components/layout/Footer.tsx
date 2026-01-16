@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <div className='flex items-center text-sm font-inter px-8 py-8'>
-        <p className='text-white/70'>{copyright}</p>
+        <p className='text-off-white/70'>{copyright}</p>
     </div>
   )
 }

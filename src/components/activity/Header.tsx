@@ -15,7 +15,7 @@ function Header() {
         className="object-cover object-bottom"
       />
       <div className="absolute flex flex-col items-center gap-8">
-        <h1 className="text-white text-4xl md:text-6xl font-semibold italic flex flex-col items-center gap-4 font-dm-serif-display">
+        <h1 className="text-off-white text-4xl md:text-6xl font-semibold italic flex flex-col items-center gap-4 font-dm-serif-display">
           Buy, Sell, Rent
           <span className="font-poppins not-italic">Real State Done Right</span>
         </h1>
@@ -27,6 +27,8 @@ function Header() {
         </BtnPrimary>
 
       </div>
+
+
     </div>
   );
 }
