@@ -5,7 +5,6 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import Footer from "@/components/layout/Footer";
 import NavBar from "@/components/layout/NavBar";
-import "flag-icons/css/flag-icons.min.css";
 import "./globals.css";
 
 const inter = Inter({
@@ -23,9 +22,6 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    icons: {
-      icon: "/images/icons/favicon.svg",
-    },
   };
 }
 
@@ -43,9 +39,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${inter.variable} antialiased dark bg-dark-blue`}>
+      <body className={`${inter.variable} antialiased dark`}>
         <NextIntlClientProvider messages={messages}>
-          <NavBar items={DEFAULT_NAVBAR_ITEMS} />
+          <NavBar />
           <main>{children}</main>
           <Footer />
         </NextIntlClientProvider>

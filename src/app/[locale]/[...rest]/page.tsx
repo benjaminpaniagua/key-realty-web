@@ -35,13 +35,7 @@ export default function NotFoundPage() {
             href="/"
             className="group px-8 py-4 rounded-2xl bg-linear-to-r from-light-blue to-blue border-2 border-light-blue text-white text-base md:text-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-light-blue hover:border-dark-blue"
           >
-            <span className="transition-transform group-hover:-translate-x-1">{t("backToHome")}</span>
-          </Link>
-          <Link
-            href="/#projects"
-            className="group px-8 py-4 rounded-2xl border-2 border-white/5 text-white text-base md:text-lg font-semibold flex items-center justify-center gap-2 transition-all hover:bg-light-blue hover:border-dark-blue"
-          >
-            <span className="transition-transform group-hover:translate-x-1">{t("viewMyWork")}</span>
+            <span className="transition-transform group-hover:-translate-x-1">{t("goBackHome")}</span>
           </Link>
         </div>
       </div>

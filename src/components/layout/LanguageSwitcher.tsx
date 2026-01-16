@@ -4,7 +4,11 @@ import { useRouter, usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 
-export default function LanguageSwitcher() {
+interface LanguageSwitcherProps {
+  className?: string;
+}
+
+export default function LanguageSwitcher({ className }: LanguageSwitcherProps) {
   const router = useRouter();
   const pathname = usePathname();
   const t = useTranslations("LanguageSwitcher");
@@ -72,35 +76,36 @@ export default function LanguageSwitcher() {
   }, []);
 
   return (
-    <div className="relative" ref={containerRef}>
+    <div className={`relative ${className}`} ref={containerRef}>
       <button
         type="button"
         onClick={() => setShowLanguages((s) => !s)}
-        className="text-white hover:text-white/80 cursor-pointer transition-colors duration-300 flex items-center gap-2"
+        className="text-white hover:text-white/80 cursor-pointer transition-all duration-300 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-secondary/10"
         aria-label={t("label")}
         aria-expanded={showLanguages}
       >
         <span className={`fi fi-${locales.find(l => l.code === currentLocale)?.flagCode} text-2xl`} />
-        <span className={`transition-transform duration-300 text-xs ${showLanguages ? "rotate-180" : ""}`}>▼</span>
+        <span className={`transition-transform duration-300 text-xs font-medium ${showLanguages ? "rotate-180" : ""}`}>▼</span>
       </button>
 
       <div
-        className={`absolute top-full mt-2 right-0 bg-dark-blue/98 border border-white/10 rounded-lg backdrop-blur-lg overflow-hidden z-50 shadow-lg shadow-black/50 transform origin-top transition-all duration-200 ${
+        className={`absolute top-full mt-2 right-0 border rounded-lg backdrop-blur-md overflow-hidden z-50 shadow-xl shadow-black/30 transform origin-top transition-all duration-200 min-w-max ${
           showLanguages ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"
         }`}
+        style={{ backgroundColor: 'var(--color-navy)' }}
       >
         {locales.map((locale) => (
           <button
             key={locale.code}
             type="button"
             onClick={() => handleLanguageChange(locale.code)}
-            className={`w-full text-left px-4 py-2.5 text-sm transition-all duration-200 flex items-center gap-3 ${
+            className={`w-full text-left px-5 py-3 text-sm transition-all duration-200 flex items-center gap-3 border-l-3 ${
               currentLocale === locale.code
-                ? "bg-purple/20 text-white font-semibold border-l-2 border-purple"
-                : "text-white/70 hover:text-white hover:bg-purple/5"
+                ? "border-l-white text-white font-semibold"
+                : "border-l-transparent text-white/80 hover:text-white hover:bg-dark/15"
             }`}
           >
-            <span className={`fi fi-${locale.flagCode} text-xl`} />
+            <span className={`fi fi-${locale.flagCode} text-lg`} />
             <span>{locale.code === "en" ? t("english") : t("spanish")}</span>
           </button>
         ))}

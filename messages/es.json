@@ -1,222 +1,34 @@
 {
-  "Error": {
-    "description": "<p>Hemos encontrado un error.</p><p>Puedes intentar <retry>recargar la página</retry> que estabas visitando.</p>",
-    "title": "¡Algo salió mal!"
-  },
-  "IndexPage": {
-    "description": "Este es un ejemplo básico que demuestra el uso de <code>next-intl</code> con el enrutador de aplicaciones de Next.js. Intenta cambiar la configuración regional en la esquina superior derecha y ver cómo cambia el contenido.",
-    "title": "ejemplo de next-intl"
-  },
-  "LocaleLayout": {
-    "title": "ejemplo de next-intl"
-  },
-  "LocaleSwitcher": {
-    "label": "Cambiar idioma",
-    "locale": "{locale, select, de {Spanisch} en {Inglés} other {Desconocido}}"
-  },
-  "Manifest": {
-    "name": "ejemplo de next-intl"
-  },
-  "Navigation": {
-    "home": "Inicio",
-    "pathnames": "nombres-de-ruta"
-  },
-  "NotFoundPage": {
-    "description": "Por favor, verifica la barra de direcciones del navegador o utiliza la navegación para ir a una página conocida.",
-    "title": "Página no encontrada",
-    "backToHome": "← Volver al inicio",
-    "viewMyWork": "Ver mis trabajos →"
-  },
-  "PageLayout": {
-    "links": {
-      "docs": {
-        "description": "Aprende mas sobre next-intl en la documentación oficial.",
-        "href": "https://next-intl.dev",
-        "title": "Documentación"
-      },
-      "source": {
-        "description": "Mira el código fuente de este ejemplo en GitHub.",
-        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
-        "title": "Código fuente"
-      }
-    }
-  },
-  "PathnamesPage": {
-    "description": "<p>Los nombres de ruta también están internacionalizados.</p><p>Si estás usando el idioma predeterminado, inglés, verás <code>/en/pathnames</code> en la barra de direcciones del navegador en esta página.</p><p>Si cambias la configuración regional a alemán, la URL se localiza en consecuencia (<code>/de/pfadnamen</code>).</p>",
-    "title": "Nombres de ruta"
-  },
   "Layout": {
-    "title": "Portafolio - Benjamin Paniagua",
-    "description": "Desarrollado por Benjamin Paniagua",
-    "keywords": "desarrollador frontend, desarrollo web, react, next.js, portafolio"
-  },
-  "Header": {
-    "name": "Benjamin Paniagua",
-    "occupation": "Desarrollador Frontend",
-    "subtitle1": "Soluciones web modernas, accesibles y escalables",
-    "subtitle2": "Apasionado por construir experiencias digitales rápidas y fáciles de usar. Abierto a nuevas oportunidades en frontend.",
-    "btnCV": "Descargar CV",
-    "pdfUrl": "/cv/BenjaminPaniaguaES.pdf"
-  },
-
-  "About": {
-    "CountrySection": {
-      "title": "Transformando la curiosidad en <br /> artesanía digital.",
-      "subtitle1": "Basado en Costa Rica 🇨🇷"
-    },
-    "SocialMediaSection": {
-      "title": "¡Revisa mis redes sociales!"
-    },
-    "TechStackSection": {
-      "title": "Mi stack tecnológico",
-      "subtitle1": "Siempre aprendiendo."
-    },
-    "PassionSection": {
-      "title": "Desarrollador con una fuerte pasión por construir aplicaciones modernas y escalables."
-    },
-    "EmailSection": {
-      "title": "¿Quieres contactarme?",
-      "subtitle1": "Estoy abierto a colaborar.",
-      "button": {
-        "emailCopied": "✓ ¡Email copiado!",
-        "copy": "Copiar mi correo electrónico"
-      }
-    },
-    "CodeSection": {
-      "title": "Transformando la curiosidad en código e ideas en experiencias.",
-      "subtitle1": "Detrás del código",
-      "imageSrc": "/images/about/codeES.svg",
-      "imageAlt": "Ilustración de código"
-    }
-  },
-  "Experience": {
-    "title": "Mi experiencia",
-    "titleHighlight": "laboral",
-    "cards": [
-      {
-        "id": 1,
-        "title": "Fortunara",
-        "description": "Desarrollo y mantenimiento de módulos web con React, Next.js y TypeScript, aplicando diseño responsive, optimización de rendimiento e integración de secciones dinámicas y componentes interactivos.",
-        "dates": "Jun 2025 - Dic 2025",
-        "image": "/images/experience/frame2.svg"
-      },
-      {
-        "id": 2,
-        "title": "Coordinación de ITM",
-        "description": "Soporte y mantenimiento de sistemas web académicos y materiales digitales. Gestión de inventario tecnológico y apoyo en documentación y pruebas de aplicaciones internas.",
-        "dates": "Jun 2024 - Jun 2025",
-        "image": "/images/experience/developer.svg"
-      },
-      {
-        "id": 3,
-        "title": "Unidad de deportes",
-        "description": "Gestión de contenido web institucional, apoyo a actividades deportivas y recreativas, y colaboración en revisión de reportes, planes y solicitudes de becas deportivas.",
-        "dates": "Ene 2024 - Dic 2025",
-        "image": "/images/experience/flash.svg"
-      }
-    ]
-  },
-  "Projects": {
-    "title": "Una pequeña selección de",
-    "titleHighlight": "proyectos recientes",
-    "cards": [
-      {
-        "id": 1,
-        "title": "EdsaWind",
-        "description": "Plataforma web corporativa enfocada en la presentación de servicios especializados para el sector eólico. El sitio muestra soluciones como reparación de aspas, fabricación de piezas de izaje y mantenimiento técnico, priorizando una navegación clara y una comunicación profesional.",
-        "image": "/images/projects/edsawind.png",
-        "link_url": "https://dev.edsawind.com/",
-        "technologies": ["next", "tailwind", "typescript", "github", "jira"]
-      },
-      {
-        "id": 2,
-        "title": "Sloths Territory",
-        "description": "Sitio web informativo para una empresa de turismo ecológico que ofrece tours diurnos y nocturnos. La plataforma destaca la observación de fauna silvestre y busca transmitir conexión con la naturaleza mediante una experiencia de usuario clara y atractiva.",
-        "image": "/images/projects/sloths.png",
-        "link_url": "https://slothsterritory.com/",
-        "technologies": [
-          "next",
-          "tailwind",
-          "typescript",
-          "github",
-          "jira",
-          "laravel",
-          "mysql"
-        ]
-      },
-      {
-        "id": 3,
-        "title": "Super Quads",
-        "description": "Página web promocional enfocada en recorridos en quad y experiencias de aventura. El proyecto presenta rutas y servicios mediante una interfaz dinámica e interactiva, reforzando el carácter aventurero de la marca y mejorando la experiencia del usuario.",
-        "image": "/images/projects/superquads.png",
-        "link_url": "https://dev.superquadscr.com/",
-        "technologies": [
-          "next",
-          "tailwind",
-          "typescript",
-          "github",
-          "jira",
-          "laravel",
-          "mysql"
-        ]
-      },
-      {
-        "id": 4,
-        "title": "Finca Educativa Don Juan",
-        "description": "Plataforma web informativa que muestra los servicios educativos y turísticos ofrecidos por la finca. El sitio presenta actividades y experiencias de forma ordenada, con un diseño accesible que facilita la comprensión de la información para los visitantes.",
-        "image": "/images/projects/fincaeducativadonjuan.png",
-        "link_url": "https://dev.fincaeducativadonjuan.com/",
-        "technologies": [
-          "next",
-          "tailwind",
-          "typescript",
-          "github",
-          "jira",
-          "laravel",
-          "mysql"
-        ]
-      },
-      {
-        "id": 5,
-        "title": "Network App",
-        "description": "Aplicación web diseñada para conectar pequeñas y medianas empresas con usuarios interesados en descubrir servicios locales. La plataforma permite a las pymes promocionar su oferta de manera organizada y fortalecer su visibilidad digital.",
-        "image": "/images/projects/nexdevs.png",
-
-        "git_url": "https://github.com/benjaminpaniagua/NexDevs---Development",
-        "technologies": [
-          "react",
-          "tailwind",
-          "javascript",
-          "github",
-          "asana",
-          "aspnet",
-          "mysql"
-        ]
-      },
-      {
-        "id": 6,
-        "title": "Sultan of Flavors",
-        "description": "Plataforma web orientada a la gestión de cursos y eventos impartidos por profesores. El proyecto integra gráficos interactivos mediante Chart.js para visualizar el progreso académico de forma clara, ofreciendo una experiencia funcional e intuitiva tanto para estudiantes como para docentes.",
-        "image": "/images/projects/sultanFlavors.png",
-        "git_url": "https://github.com/benjaminpaniagua/attimo",
-        "technologies": [
-          "html",
-          "css",
-          "javascript",
-          "github",
-          "asana",
-          "php",
-          "mysql"
-        ]
-      }
-    ]
+    "title": "Key Realty",
+    "description": "Developed by Benjamin Paniagua"
   },
   "LanguageSwitcher": {
     "label": "Cambiar idioma",
     "english": "Inglés",
     "spanish": "Español"
   },
+  "NotFoundPage": {
+    "title": "404 - Pagina no encontrada",
+    "description": "Por favor, verifica la barra de direcciones del navegador o utiliza la navegación para ir a una página conocida.",
+    "goBackHome": "Volver al inicio"
+  },
+  "NavBar": {
+    "links": [
+      { "name": "Inicio", "href": "/" },
+      { "name": "Comprar", "href": "/properties?type=buy" },
+      { "name": "Vender", "href": "/properties?type=sell" },
+      { "name": "Alquilar", "href": "/properties?type=rent" },
+      { "name": "Acerca de", "href": "/about" },
+      { "name": "Contáctanos", "href": "/contact" }
+    ]
+  },
   "Footer": {
     "copyright": "Copyright © {year} Benjamin Paniagua Rojas"
   }
 }
+
+
+
+
+

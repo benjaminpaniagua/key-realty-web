@@ -1,10 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "flag-icons/css/flag-icons.min.css";
 
 @theme {
   --color-light-blue: #007fff;
-
-
   --color-white: #ffffff;
   --color-gray: #C1C2D3;
   --color-dark-blue: #000319;
@@ -13,10 +12,8 @@
   --color-light-blue: #0C0E23;
   --color-light-blue: #161A31;
   --color-purple: #CBACF9;
-
-
-
-
+  --color-navy: #1D3557;
+  --color-gray-secondary: #717171;
 
   --font-inter: "Inter", sans-serif; 
 }
