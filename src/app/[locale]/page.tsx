@@ -12,7 +12,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
   // const t = useTranslations("IndexPage");
 
   return (
-    <main className="font-inter">
+    <main className="font-poppins">
       <Header />
       <About />
     </main>

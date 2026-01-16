@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { DEFAULT_NAVBAR_ITEMS } from "@/types/navbar";
+import { Poppins, DM_Serif_Display } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import Footer from "@/components/layout/Footer";
 import NavBar from "@/components/layout/NavBar";
 import "./globals.css";
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
+
+const dmSerifDisplay = DM_Serif_Display({
+  subsets: ["latin"],
+  variable: "--font-dm-serif-display",
+  weight: ["400"],
 });
 
 export async function generateMetadata({
@@ -39,7 +45,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${inter.variable} antialiased dark`}>
+      <body className={`${poppins.variable} ${dmSerifDisplay.variable} antialiased dark font-poppins font-dm-serif-display`}>
         <NextIntlClientProvider messages={messages}>
           <NavBar />
           <main>{children}</main>

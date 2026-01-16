@@ -27,6 +27,11 @@ declare const messages: {
       { "name": "Contact us", "href": "/contact" }
     ]
   },
+
+  "Common": {
+    "signUp": "Sign Up",
+    "login": "Login"
+  },
   
   "Footer": {
     "copyright": "Copyright © {year} Benjamin Paniagua Rojas"

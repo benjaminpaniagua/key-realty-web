@@ -23,6 +23,12 @@
       { "name": "Contáctanos", "href": "/contact" }
     ]
   },
+
+  "Common": {
+    "signUp": "Registrarse",
+    "login": "Iniciar sesión"
+  },
+
   "Footer": {
     "copyright": "Copyright © {year} Benjamin Paniagua Rojas"
   }

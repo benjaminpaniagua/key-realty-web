@@ -10,12 +10,12 @@ import BtnPrimary from "../ui/common/BtnPrimary";
 import BtnSecondary from "../ui/common/BtnSecondary";
 
 export default function NavBar() {
-  const t = useTranslations("NavBar");
+  const t = useTranslations("NavBar"), tCommon = useTranslations("Common");
   const navLinks: NavBarLink[] = t.raw("links");
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed z-12 w-full bg-transparent backdrop-blur-xs">
+    <nav className="fixed z-12 w-full bg-transparent backdrop-blur-xs py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
@@ -28,8 +28,8 @@ export default function NavBar() {
             />
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* desktop Menu */}
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link 
                 key={link.href}
@@ -41,24 +41,24 @@ export default function NavBar() {
             ))}
           </div>
 
-          {/* Right Side Items */}
+          {/* right side items */}
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-4">
               <LanguageSwitcher />
               <BtnPrimary 
-                label="Sign Up"
-                className="hidden md:flex"
+                label={tCommon("signUp")}
+                className="hidden lg:flex"
               />
               <BtnSecondary 
-                label="Login"
-                className="hidden md:flex"
+                label={tCommon("login")}
+                className="hidden lg:flex"
               />
             </div>
             
-            {/* Hamburger Menu Button */}
+            {/* hamburger menu button */}
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden flex flex-col gap-1.5 cursor-pointer"
+              className="lg:hidden flex flex-col gap-1.5 cursor-pointer"
               aria-label="Toggle menu"
             >
               <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
@@ -68,15 +68,18 @@ export default function NavBar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* mobile menu */}
         <div
-          className={
-            `overflow-hidden transition-all duration-300 ease-out md:hidden${
-              isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-            }`
-          }
-        >
-          <div className="pb-4 flex flex-col gap-4 mt-2">
+  className={`
+    overflow-hidden transition-all duration-300 ease-out lg:hidden
+    ${isOpen 
+      ? "max-h-96 opacity-100 pointer-events-auto" 
+      : "max-h-0 opacity-0 pointer-events-none"
+    }
+  `}
+>
+
+          <div className="pb-4 lg:hidden flex flex-col gap-4 mt-2">
             {navLinks.map((link) => (
               <Link 
                 key={link.href}
@@ -87,13 +90,13 @@ export default function NavBar() {
               </Link>
             ))}
             
-            {/* Mobile-only Language Switcher and Sign Up */}
+            {/* mobile-only language switcher and sign up */}
             <div className="flex flex-col gap-3 px-4 border-t border-white/10 pt-4">
               <BtnPrimary 
-                label="Sign Up"
+                label={tCommon("signUp")}
               />
               <BtnSecondary 
-                label="Login"
+                label={tCommon("login")}
               />
             </div>
           </div>
