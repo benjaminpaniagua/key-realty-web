@@ -16,7 +16,10 @@ declare const messages: {
     "description": "Please, check the browser's address bar or use the navigation to go to a known page.",
     "goBackHome": "Go back home"
   },
-  
+  "Manifest": {
+    "name": "Key Realty - Find your dream property",
+    "short_name": "Key Realty"
+  },
   "NavBar": {
     "links": [
       { "name": "Home", "href": "/" },

@@ -13,6 +13,10 @@
     "description": "Por favor, verifica la barra de direcciones del navegador o utiliza la navegación para ir a una página conocida.",
     "goBackHome": "Volver al inicio"
   },
+  "Manifest": {
+    "name": "Key Realty - Encuentra la propiedad de tus sueños",
+    "short_name": "Key Realty"
+  },
   "NavBar": {
     "links": [
       { "name": "Inicio", "href": "/" },

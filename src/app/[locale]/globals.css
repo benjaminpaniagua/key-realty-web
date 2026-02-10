@@ -20,4 +20,21 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0;
 }
 
+@keyframes confetti {
+  from {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(0.4);
+  }
+}
 
+.confetti {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  animation: confetti 600ms ease-out forwards;
+}
