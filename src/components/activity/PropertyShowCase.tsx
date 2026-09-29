@@ -4,11 +4,12 @@ import { forwardRef } from "react";
 import CardProperties from "../ui/properties/CardProperties";
 import { propertiesData } from "@/data/Properties";
 import { FaArrowRight } from "react-icons/fa6";
+import Link from 'next/link';
 
 const PropertyShowCase = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <section ref={ref} className="">
-      <div className="flex justify-between mb-12 items-center">
+    <section ref={ref} className="p-4">
+      <div className="flex justify-between mb-12 md:items-center items-start flex-col md:flex-row gap-4">
         <div className="flex flex-col gap-2">
           <h2 className="text-navy text-4xl font-semibold">
             Find Your Dream Property
@@ -19,22 +20,27 @@ const PropertyShowCase = forwardRef<HTMLDivElement>((props, ref) => {
           </p>
         </div>
 
-        <button className="text-navy font-semibold text-sm flex items-center gap-2 group">
+        <Link
+          href="/properties"
+          className="text-navy font-semibold text-sm flex items-center gap-2 group"
+        >
           See All Properties
           <FaArrowRight className="transition-transform duration-300 group-hover:rotate-0 -rotate-45 hover:underline" />
-        </button>
+        </Link>
       </div>
 
       <div
         className="
         grid 
         grid-cols-1 
-        sm:grid-cols-2
-        md:grid-cols-3
-        xl:grid-cols-4
-        2xl:grid-cols-5 
+        sm:grid-cols-1
+        md:grid-cols-2
+        lg:grid-cols-2
+        xl:grid-cols-3
+        2xl:grid-cols-4
         gap-x-8 
         gap-y-12
+        items-center
       "
       >
         {propertiesData.map((property) => (

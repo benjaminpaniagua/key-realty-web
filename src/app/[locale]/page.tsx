@@ -18,7 +18,7 @@ export default function IndexPage({ params }: PageProps<"/[locale]">) {
   return (
     <main className="font-poppins bg-off-white flex flex-col gap-20">
       <Header/>
-      <div className="max-w-[1440px] mx-auto">
+      <div className="md:max-w-[1440px] xl:max-w-[1920px] mx-auto">
         <PropertyShowCase />
         <About />
       </div>

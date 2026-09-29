@@ -8,5 +8,12 @@ export const routing = defineRouting({
     '/pathnames': {
       es: '/nombres-de-ruta'
     },
+    '/properties': {
+      es: '/propiedades'
+    },
+    '/properties/[slug]': {
+      es: '/propiedades/[slug]'
   }
+}
+
 });
